@@ -24,3 +24,14 @@ paper_supplement_recovered/
 Thumbs.db
 .env
 .env.*
+
+# The user requested publication of the 16 CWRU MAT recordings used here.
+# Keep other datasets ignored; only this specific directory is whitelisted.
+!/data/
+/data/*
+!/data/CWRU/
+!/data/CWRU/*.mat
+!/data/CWRU/manifest.json
+
+# Locally regenerated experimental arrays and training output
+/fa_chebykan/generated/
