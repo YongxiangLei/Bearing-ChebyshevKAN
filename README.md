@@ -129,8 +129,8 @@ python cwru/exp/eval_cwru_holdout.py --augment-noise --output cwru/exp/outputs/n
 
 ## 来源与使用边界
 
-- XJTU-SY：[官方发布仓库与引用要求](https://github.com/WangBiaoXJTU/xjtu-sy-bearing-datasets)。
-- Paderborn：[Bearing DataCenter](https://mb.uni-paderborn.de/kat/forschung/bearing-datacenter/data-sets-and-download)；使用数据前请查看提供方条款，商业使用需特别核对。
+- XJTU-SY：[官方发布仓库与引用要求](https://github.com/WangBiaoXJTU/xjtu-sy-bearing-datasets)。Wang, B.; Lei, Y.; Li, N.; Li, N. “A Hybrid Prognostics Approach for Estimating Remaining Useful Life of Rolling Element Bearings,” *IEEE Transactions on Reliability*, 69(1), 401–412, 2020. [DOI: 10.1109/TR.2018.2882682](https://doi.org/10.1109/TR.2018.2882682)。
+- Paderborn：Christian Lessmeier 等，KAt-DataCenter，Chair of Design and Drive Technology, Paderborn University，[Bearing DataCenter](https://mb.uni-paderborn.de/en/kat/research/bearing-datacenter)。原始数据使用 [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)；本仓库的 `interpretability/pu/ig_test.npz` 包含由该数据计算的标准化 FFT 等衍生数组。使用数据请遵守该许可，商业用途请联系提供方。参考论文：Lessmeier, C.; Kimotho, J. K.; Zimmer, D.; Sextro, W., “Condition Monitoring of Bearing Damage in Electromechanical Drive Systems Using Motor Current Signals: A Benchmark Data Set for Data-Driven Classification,” *European Conference of the Prognostics and Health Management Society*, 2016。
 - CWRU：[Bearing Data Center](https://engineering.case.edu/bearingdatacenter/download-data-file)。
 - KAN 结构参考：[KAN 论文](https://arxiv.org/abs/2404.19756)；B 样条实现验证参考 [SciPy 文档](https://docs.scipy.org/doc/scipy/reference/generated/scipy.interpolate.BSpline.html)。
 
