@@ -1,0 +1,520 @@
+{
+  "created_utc": "2026-11-11T01:26:45.184536+00:00",
+  "protocol": "Three-class exploratory task. Hold out whole bearing IDs by class; use two recordings per bearing at N15_M07_F10; take 100 non-overlapping length-1024 windows per recording, distributed across the trace. Per-window z-score, magnitude FFT, then train-only feature scaling. Best validation macro-F1, AdamW.",
+  "limitations": "Only 3/1/2 bearings per class for training/validation/test; only one operating condition, two recordings per bearing. This independent protocol is not the supplied paper script and cannot estimate broad population performance.",
+  "bearing_splits": {
+    "train": {
+      "normal": [
+        "K001",
+        "K002",
+        "K003"
+      ],
+      "inner": [
+        "KI01",
+        "KI03",
+        "KI04"
+      ],
+      "outer": [
+        "KA01",
+        "KA03",
+        "KA04"
+      ]
+    },
+    "validation": {
+      "normal": [
+        "K004"
+      ],
+      "inner": [
+        "KI05"
+      ],
+      "outer": [
+        "KA05"
+      ]
+    },
+    "test": {
+      "normal": [
+        "K005",
+        "K006"
+      ],
+      "inner": [
+        "KI07",
+        "KI16"
+      ],
+      "outer": [
+        "KA06",
+        "KA07"
+      ]
+    }
+  },
+  "files": [
+    {
+      "bearing": "K001",
+      "class": "normal",
+      "split": "train",
+      "file": "K001/N15_M07_F10_K001_1.mat",
+      "channel": "vibration_1",
+      "samples": 256001,
+      "windows": 100
+    },
+    {
+      "bearing": "K001",
+      "class": "normal",
+      "split": "train",
+      "file": "K001/N15_M07_F10_K001_2.mat",
+      "channel": "vibration_1",
+      "samples": 256001,
+      "windows": 100
+    },
+    {
+      "bearing": "K002",
+      "class": "normal",
+      "split": "train",
+      "file": "K002/N15_M07_F10_K002_1.mat",
+      "channel": "vibration_1",
+      "samples": 256001,
+      "windows": 100
+    },
+    {
+      "bearing": "K002",
+      "class": "normal",
+      "split": "train",
+      "file": "K002/N15_M07_F10_K002_2.mat",
+      "channel": "vibration_1",
+      "samples": 256001,
+      "windows": 100
+    },
+    {
+      "bearing": "K003",
+      "class": "normal",
+      "split": "train",
+      "file": "K003/N15_M07_F10_K003_1.mat",
+      "channel": "vibration_1",
+      "samples": 256000,
+      "windows": 100
+    },
+    {
+      "bearing": "K003",
+      "class": "normal",
+      "split": "train",
+      "file": "K003/N15_M07_F10_K003_2.mat",
+      "channel": "vibration_1",
+      "samples": 256001,
+      "windows": 100
+    },
+    {
+      "bearing": "KI01",
+      "class": "inner",
+      "split": "train",
+      "file": "KI01/N15_M07_F10_KI01_1.mat",
+      "channel": "vibration_1",
+      "samples": 258008,
+      "windows": 100
+    },
+    {
+      "bearing": "KI01",
+      "class": "inner",
+      "split": "train",
+      "file": "KI01/N15_M07_F10_KI01_2.mat",
+      "channel": "vibration_1",
+      "samples": 257037,
+      "windows": 100
+    },
+    {
+      "bearing": "KI03",
+      "class": "inner",
+      "split": "train",
+      "file": "KI03/N15_M07_F10_KI03_1.mat",
+      "channel": "vibration_1",
+      "samples": 256091,
+      "windows": 100
+    },
+    {
+      "bearing": "KI03",
+      "class": "inner",
+      "split": "train",
+      "file": "KI03/N15_M07_F10_KI03_2.mat",
+      "channel": "vibration_1",
+      "samples": 256001,
+      "windows": 100
+    },
+    {
+      "bearing": "KI04",
+      "class": "inner",
+      "split": "train",
+      "file": "KI04/N15_M07_F10_KI04_1.mat",
+      "channel": "vibration_1",
+      "samples": 256001,
+      "windows": 100
+    },
+    {
+      "bearing": "KI04",
+      "class": "inner",
+      "split": "train",
+      "file": "KI04/N15_M07_F10_KI04_2.mat",
+      "channel": "vibration_1",
+      "samples": 256001,
+      "windows": 100
+    },
+    {
+      "bearing": "KA01",
+      "class": "outer",
+      "split": "train",
+      "file": "KA01/N15_M07_F10_KA01_1.mat",
+      "channel": "vibration_1",
+      "samples": 256000,
+      "windows": 100
+    },
+    {
+      "bearing": "KA01",
+      "class": "outer",
+      "split": "train",
+      "file": "KA01/N15_M07_F10_KA01_2.mat",
+      "channel": "vibration_1",
+      "samples": 256095,
+      "windows": 100
+    },
+    {
+      "bearing": "KA03",
+      "class": "outer",
+      "split": "train",
+      "file": "KA03/N15_M07_F10_KA03_1.mat",
+      "channel": "vibration_1",
+      "samples": 256004,
+      "windows": 100
+    },
+    {
+      "bearing": "KA03",
+      "class": "outer",
+      "split": "train",
+      "file": "KA03/N15_M07_F10_KA03_2.mat",
+      "channel": "vibration_1",
+      "samples": 283668,
+      "windows": 100
+    },
+    {
+      "bearing": "KA04",
+      "class": "outer",
+      "split": "train",
+      "file": "KA04/N15_M07_F10_KA04_1.mat",
+      "channel": "vibration_1",
+      "samples": 256004,
+      "windows": 100
+    },
+    {
+      "bearing": "KA04",
+      "class": "outer",
+      "split": "train",
+      "file": "KA04/N15_M07_F10_KA04_2.mat",
+      "channel": "vibration_1",
+      "samples": 262062,
+      "windows": 100
+    },
+    {
+      "bearing": "K004",
+      "class": "normal",
+      "split": "validation",
+      "file": "K004/N15_M07_F10_K004_1.mat",
+      "channel": "vibration_1",
+      "samples": 256001,
+      "windows": 100
+    },
+    {
+      "bearing": "K004",
+      "class": "normal",
+      "split": "validation",
+      "file": "K004/N15_M07_F10_K004_2.mat",
+      "channel": "vibration_1",
+      "samples": 256001,
+      "windows": 100
+    },
+    {
+      "bearing": "KI05",
+      "class": "inner",
+      "split": "validation",
+      "file": "KI05/N15_M07_F10_KI05_1.mat",
+      "channel": "vibration_1",
+      "samples": 258095,
+      "windows": 100
+    },
+    {
+      "bearing": "KI05",
+      "class": "inner",
+      "split": "validation",
+      "file": "KI05/N15_M07_F10_KI05_2.mat",
+      "channel": "vibration_1",
+      "samples": 256001,
+      "windows": 100
+    },
+    {
+      "bearing": "KA05",
+      "class": "outer",
+      "split": "validation",
+      "file": "KA05/N15_M07_F10_KA05_1.mat",
+      "channel": "vibration_1",
+      "samples": 256001,
+      "windows": 100
+    },
+    {
+      "bearing": "KA05",
+      "class": "outer",
+      "split": "validation",
+      "file": "KA05/N15_M07_F10_KA05_2.mat",
+      "channel": "vibration_1",
+      "samples": 284704,
+      "windows": 100
+    },
+    {
+      "bearing": "K005",
+      "class": "normal",
+      "split": "test",
+      "file": "K005/N15_M07_F10_K005_1.mat",
+      "channel": "vibration_1",
+      "samples": 256001,
+      "windows": 100
+    },
+    {
+      "bearing": "K005",
+      "class": "normal",
+      "split": "test",
+      "file": "K005/N15_M07_F10_K005_2.mat",
+      "channel": "vibration_1",
+      "samples": 256001,
+      "windows": 100
+    },
+    {
+      "bearing": "K006",
+      "class": "normal",
+      "split": "test",
+      "file": "K006/N15_M07_F10_K006_1.mat",
+      "channel": "vibration_1",
+      "samples": 256001,
+      "windows": 100
+    },
+    {
+      "bearing": "K006",
+      "class": "normal",
+      "split": "test",
+      "file": "K006/N15_M07_F10_K006_2.mat",
+      "channel": "vibration_1",
+      "samples": 256001,
+      "windows": 100
+    },
+    {
+      "bearing": "KI07",
+      "class": "inner",
+      "split": "test",
+      "file": "KI07/N15_M07_F10_KI07_1.mat",
+      "channel": "vibration_1",
+      "samples": 256000,
+      "windows": 100
+    },
+    {
+      "bearing": "KI07",
+      "class": "inner",
+      "split": "test",
+      "file": "KI07/N15_M07_F10_KI07_2.mat",
+      "channel": "vibration_1",
+      "samples": 274149,
+      "windows": 100
+    },
+    {
+      "bearing": "KI16",
+      "class": "inner",
+      "split": "test",
+      "file": "KI16/N15_M07_F10_KI16_1.mat",
+      "channel": "vibration_1",
+      "samples": 256001,
+      "windows": 100
+    },
+    {
+      "bearing": "KI16",
+      "class": "inner",
+      "split": "test",
+      "file": "KI16/N15_M07_F10_KI16_2.mat",
+      "channel": "vibration_1",
+      "samples": 256000,
+      "windows": 100
+    },
+    {
+      "bearing": "KA06",
+      "class": "outer",
+      "split": "test",
+      "file": "KA06/N15_M07_F10_KA06_1.mat",
+      "channel": "vibration_1",
+      "samples": 256083,
+      "windows": 100
+    },
+    {
+      "bearing": "KA06",
+      "class": "outer",
+      "split": "test",
+      "file": "KA06/N15_M07_F10_KA06_2.mat",
+      "channel": "vibration_1",
+      "samples": 256001,
+      "windows": 100
+    },
+    {
+      "bearing": "KA07",
+      "class": "outer",
+      "split": "test",
+      "file": "KA07/N15_M07_F10_KA07_1.mat",
+      "channel": "vibration_1",
+      "samples": 256001,
+      "windows": 100
+    },
+    {
+      "bearing": "KA07",
+      "class": "outer",
+      "split": "test",
+      "file": "KA07/N15_M07_F10_KA07_2.mat",
+      "channel": "vibration_1",
+      "samples": 256001,
+      "windows": 100
+    }
+  ],
+  "seed": 42,
+  "best_epoch": 2,
+  "training": {
+    "epochs_max": 50,
+    "patience": 10,
+    "batch_size": 64,
+    "device": "cpu",
+    "optimizer": "AdamW lr=0.005 weight_decay=0.0001",
+    "torch": "2.15.0+cpu",
+    "numpy": "1.26.4"
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.5989451432228088,
+      "validation_accuracy": 0.12333333333333334,
+      "validation_macro_f1": 0.09180839470995043
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.2903655211130778,
+      "validation_accuracy": 0.22166666666666668,
+      "validation_macro_f1": 0.1230170810079486
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.25393690374162464,
+      "validation_accuracy": 0.13833333333333334,
+      "validation_macro_f1": 0.10538097380202643
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.17526942799488704,
+      "validation_accuracy": 0.10333333333333333,
+      "validation_macro_f1": 0.06836950706027405
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.13375171648131476,
+      "validation_accuracy": 0.1,
+      "validation_macro_f1": 0.08157088178411377
+    },
+    {
+      "epoch": 6,
+      "train_loss": 0.09488272474871741,
+      "validation_accuracy": 0.095,
+      "validation_macro_f1": 0.08004858791375645
+    },
+    {
+      "epoch": 7,
+      "train_loss": 0.06867344013104835,
+      "validation_accuracy": 0.11,
+      "validation_macro_f1": 0.09081196581196582
+    },
+    {
+      "epoch": 8,
+      "train_loss": 0.0677396164337794,
+      "validation_accuracy": 0.11666666666666667,
+      "validation_macro_f1": 0.09470801873140232
+    },
+    {
+      "epoch": 9,
+      "train_loss": 0.0566537804570463,
+      "validation_accuracy": 0.07666666666666666,
+      "validation_macro_f1": 0.06186961005842445
+    },
+    {
+      "epoch": 10,
+      "train_loss": 0.06233614100350274,
+      "validation_accuracy": 0.08833333333333333,
+      "validation_macro_f1": 0.07725344392299151
+    },
+    {
+      "epoch": 11,
+      "train_loss": 0.04784859892394808,
+      "validation_accuracy": 0.09833333333333333,
+      "validation_macro_f1": 0.07360920107917396
+    },
+    {
+      "epoch": 12,
+      "train_loss": 0.04073539286644923,
+      "validation_accuracy": 0.125,
+      "validation_macro_f1": 0.1016139789249033
+    }
+  ],
+  "test": {
+    "n": 1200,
+    "accuracy": 0.38666666666666666,
+    "macro_f1": 0.35107461476074614,
+    "class_order": [
+      "normal",
+      "inner",
+      "outer"
+    ],
+    "confusion_matrix_rows_true_columns_predicted": [
+      [
+        200,
+        200,
+        0
+      ],
+      [
+        9,
+        264,
+        127
+      ],
+      [
+        31,
+        369,
+        0
+      ]
+    ],
+    "per_class": {
+      "normal": {
+        "precision": 0.8333333333333334,
+        "recall": 0.5,
+        "f1-score": 0.625,
+        "support": 400.0
+      },
+      "inner": {
+        "precision": 0.3169267707082833,
+        "recall": 0.66,
+        "f1-score": 0.4282238442822384,
+        "support": 400.0
+      },
+      "outer": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 400.0
+      },
+      "accuracy": 0.38666666666666666,
+      "macro avg": {
+        "precision": 0.3834200346805389,
+        "recall": 0.3866666666666667,
+        "f1-score": 0.35107461476074614,
+        "support": 1200.0
+      },
+      "weighted avg": {
+        "precision": 0.38342003468053887,
+        "recall": 0.38666666666666666,
+        "f1-score": 0.35107461476074614,
+        "support": 1200.0
+      }
+    }
+  }
+}

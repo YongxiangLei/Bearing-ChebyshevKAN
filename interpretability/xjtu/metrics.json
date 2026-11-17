@@ -1,0 +1,92 @@
+{
+  "model": "<project>\\xjtu\\results\\AdaptiveChebyshevKAN.pt",
+  "baseline": "training feature mean (standardized zero)",
+  "ig_steps": 64,
+  "top5_jaccard_between_the_two_test_bearings": 0.42857142857142855,
+  "limitations": [
+    "Only two held-out bearings and one random seed; time samples within one bearing are correlated.",
+    "The model target is normalized using full observed endpoint, not online available minutes. This audit explains predictions, not actual causal mechanism.",
+    "The two bearings differ in both condition and identity; their explanation differences cannot be attributed solely to condition.",
+    "Features are correlated and masking features to their training means can create off-manifold examples."
+  ],
+  "feature_names": [
+    "horizontal_rms",
+    "horizontal_peak_abs",
+    "horizontal_variance",
+    "horizontal_kurtosis",
+    "horizontal_skewness",
+    "vertical_rms",
+    "vertical_peak_abs",
+    "vertical_variance",
+    "vertical_kurtosis",
+    "vertical_skewness"
+  ],
+  "results": {
+    "same_domain": {
+      "bearing": "Bearing1_3",
+      "n": 158,
+      "true_target": "relative remaining lifetime, linearly 1 to 0 using observed run endpoint; not minutes",
+      "rmse": 0.26014353417779335,
+      "mae": 0.21900535258147266,
+      "baseline_prediction": 0.4927299916744232,
+      "ig_mean_absolute_completeness_error": 0.0001234387164004147,
+      "ig_mean_absolute_prediction_difference_from_baseline": 0.3120083212852478,
+      "ig_completeness_ratio_of_means": 0.0003956263535656035,
+      "global_mean_abs_attribution": {
+        "horizontal_rms": 0.03384428471326828,
+        "horizontal_peak_abs": 0.11000436544418335,
+        "horizontal_variance": 0.09436801820993423,
+        "horizontal_kurtosis": 0.07987220585346222,
+        "horizontal_skewness": 0.0516582690179348,
+        "vertical_rms": 0.06369531154632568,
+        "vertical_peak_abs": 0.10147818922996521,
+        "vertical_variance": 0.050545599311590195,
+        "vertical_kurtosis": 0.0853995606303215,
+        "vertical_skewness": 0.06509744375944138
+      },
+      "top5_feature_ranking": [
+        "horizontal_peak_abs",
+        "vertical_peak_abs",
+        "horizontal_variance",
+        "vertical_kurtosis",
+        "horizontal_kurtosis"
+      ],
+      "top3_absolute_attribution_share": 0.5638629794120789,
+      "mask_top3_mean_absolute_prediction_change": 0.1864527314901352,
+      "mask_random3_mean_absolute_prediction_change_50_repeats": 0.13602454081177712
+    },
+    "cross_domain": {
+      "bearing": "Bearing2_1",
+      "n": 491,
+      "true_target": "relative remaining lifetime, linearly 1 to 0 using observed run endpoint; not minutes",
+      "rmse": 0.4608312616221253,
+      "mae": 0.38680899734936125,
+      "baseline_prediction": 0.4927299916744232,
+      "ig_mean_absolute_completeness_error": 0.00020885921549052,
+      "ig_mean_absolute_prediction_difference_from_baseline": 0.4108836352825165,
+      "ig_completeness_ratio_of_means": 0.0005083172000013292,
+      "global_mean_abs_attribution": {
+        "horizontal_rms": 0.028641222044825554,
+        "horizontal_peak_abs": 0.1488800197839737,
+        "horizontal_variance": 0.08152095228433609,
+        "horizontal_kurtosis": 0.10774024575948715,
+        "horizontal_skewness": 0.052367907017469406,
+        "vertical_rms": 0.09573786705732346,
+        "vertical_peak_abs": 0.16263116896152496,
+        "vertical_variance": 0.08862677961587906,
+        "vertical_kurtosis": 0.0707714781165123,
+        "vertical_skewness": 0.022705238312482834
+      },
+      "top5_feature_ranking": [
+        "vertical_peak_abs",
+        "horizontal_peak_abs",
+        "horizontal_kurtosis",
+        "vertical_rms",
+        "vertical_variance"
+      ],
+      "top3_absolute_attribution_share": 0.5274008512496948,
+      "mask_top3_mean_absolute_prediction_change": 0.23289740085601807,
+      "mask_random3_mean_absolute_prediction_change_50_repeats": 0.12120013430714607
+    }
+  }
+}

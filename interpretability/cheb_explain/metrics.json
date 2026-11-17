@@ -1,0 +1,90 @@
+{
+  "baseline": "Per fold, bearing-weighted training mean, zero in scaled space; same zero vector for the 13 inputs.",
+  "target": "nonnegative clipping applied to predicted minutes to last acquisition",
+  "test": "15 held-out bearings x 3 training seeds; no record is an independent bearing",
+  "aggregation": "mean absolute IG within each test bearing, then equal mean across 3 seeds and across 15 bearings",
+  "ig_steps": 128,
+  "max_checkpoint_prediction_error_minutes": 6.0546874919964466e-05,
+  "completeness_mean_absolute_error_minutes": 0.3112391595935656,
+  "mean_abs_prediction_difference_from_baseline_minutes": 225.04835493299697,
+  "completeness_error_ratio_of_means": 0.0013829879346873252,
+  "within_bearing_seed_mean_top3_jaccard": 0.4044444444444445,
+  "within_bearing_seed_median_top3_jaccard": 0.5,
+  "within_bearing_seed_mean_spearman": 0.5391941391941393,
+  "between_bearings_mean_top3_jaccard": 0.2914285714285715,
+  "between_bearings_note": "Each test bearing uses its own model and training set; not an isolated condition effect.",
+  "limits": [
+    "Training mean may be physically unrealistic because correlated features/conditions are mixed.",
+    "Speed and radial load are perfectly confounded by three fixed conditions; attribution cannot distinguish independent effects.",
+    "Explains predictions, not physical causality, quality of prediction or future-bearing uncertainty.",
+    "45 models but only 15 independent test bearings; samples in a bearing are correlated.",
+    "Mean signed IG is relative to the training centroid and may cancel across samples; not a monotonicity test."
+  ],
+  "global_ranking": [
+    {
+      "feature": "load_kN",
+      "mean_abs_ig_minutes": 72.27240038991667,
+      "mean_signed_ig_minutes": 46.5251459014985
+    },
+    {
+      "feature": "speed_hz",
+      "mean_abs_ig_minutes": 60.499431991682776,
+      "mean_signed_ig_minutes": 35.559299548504825
+    },
+    {
+      "feature": "elapsed_minutes",
+      "mean_abs_ig_minutes": 57.67101413938735,
+      "mean_signed_ig_minutes": -28.123363102806938
+    },
+    {
+      "feature": "horizontal_skewness",
+      "mean_abs_ig_minutes": 38.378797096676294,
+      "mean_signed_ig_minutes": -19.321761484940847
+    },
+    {
+      "feature": "vertical_rms",
+      "mean_abs_ig_minutes": 37.047541639539936,
+      "mean_signed_ig_minutes": 18.361227504412334
+    },
+    {
+      "feature": "vertical_kurtosis",
+      "mean_abs_ig_minutes": 33.87783672544691,
+      "mean_signed_ig_minutes": 22.800775668356152
+    },
+    {
+      "feature": "vertical_skewness",
+      "mean_abs_ig_minutes": 32.946524527337814,
+      "mean_signed_ig_minutes": 12.287238979174031
+    },
+    {
+      "feature": "vertical_peak",
+      "mean_abs_ig_minutes": 30.375763395097522,
+      "mean_signed_ig_minutes": 13.54390966826015
+    },
+    {
+      "feature": "horizontal_peak",
+      "mean_abs_ig_minutes": 29.788395680321585,
+      "mean_signed_ig_minutes": 8.141058129734462
+    },
+    {
+      "feature": "horizontal_rms",
+      "mean_abs_ig_minutes": 29.242718203862506,
+      "mean_signed_ig_minutes": 10.127050722969903
+    },
+    {
+      "feature": "vertical_variance",
+      "mean_abs_ig_minutes": 25.82436111238268,
+      "mean_signed_ig_minutes": 12.702687178717719
+    },
+    {
+      "feature": "horizontal_variance",
+      "mean_abs_ig_minutes": 21.60991260740492,
+      "mean_signed_ig_minutes": 10.599699663288064
+    },
+    {
+      "feature": "horizontal_kurtosis",
+      "mean_abs_ig_minutes": 13.714341084162394,
+      "mean_signed_ig_minutes": 2.4015405469470554
+    }
+  ]
+}

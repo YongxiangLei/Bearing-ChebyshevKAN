@@ -1,0 +1,41 @@
+{
+  "seed": 42,
+  "epochs": 50,
+  "device": "cpu",
+  "bearings": {
+    "train_1": "work\\data\\XJTU-SY\\XJTU-SY_Bearing_Datasets\\35Hz12kN\\Bearing1_1",
+    "train_2": "work\\data\\XJTU-SY\\XJTU-SY_Bearing_Datasets\\35Hz12kN\\Bearing1_2",
+    "same_domain_test": "work\\data\\XJTU-SY\\XJTU-SY_Bearing_Datasets\\35Hz12kN\\Bearing1_3",
+    "cross_domain_test": "work\\data\\XJTU-SY\\XJTU-SY_Bearing_Datasets\\37.5Hz11kN\\Bearing2_1"
+  },
+  "sample_counts": {
+    "train_1": 123,
+    "train_2": 161,
+    "same_domain_test": 158,
+    "cross_domain_test": 491
+  },
+  "target": "normalized remaining life: 1 at first file, 0 at last file",
+  "feature_order": "for each CSV column: RMS, peak absolute, variance, kurtosis, skewness",
+  "models": {
+    "AdaptiveChebyshevKAN": {
+      "same_domain_test": {
+        "rmse": 0.2601435357500972,
+        "mae": 0.21900534629821777
+      },
+      "cross_domain_test": {
+        "rmse": 0.4608312419679495,
+        "mae": 0.38680899143218994
+      }
+    },
+    "StandardMLP": {
+      "same_domain_test": {
+        "rmse": 0.35725467710990455,
+        "mae": 0.3015817701816559
+      },
+      "cross_domain_test": {
+        "rmse": 0.4850655678297069,
+        "mae": 0.4115349054336548
+      }
+    }
+  }
+}

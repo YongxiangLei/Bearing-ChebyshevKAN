@@ -1,0 +1,968 @@
+{
+  "created_utc": "2026-11-11T01:14:26.640214+00:00",
+  "protocol": "Raw-recording temporal 60/20/20 splits before 512-sample windows, 50% within-split overlap; 0hp train/validation/test; per-class split; train-only FFT feature normalization; weighted loss; validation macro-F1 early stopping.",
+  "limitations": "Same recording contributes to all temporal splits; not independent bearings/runs. Exact sample rate of normal baseline files is not confirmed by the source consulted. Optional 4x downsampling is a sensitivity experiment under an unverified 48 kHz assumption. No guarantees of exact GPU determinism.",
+  "settings": {
+    "seed": 42,
+    "epochs_max": 50,
+    "patience": 10,
+    "batch_size": 64,
+    "device": "cpu",
+    "window": 512,
+    "overlap": 0.5,
+    "model": "2-layer adaptive Chebyshev KAN, hidden 32, degree 5",
+    "optimizer": "AdamW lr=0.005 weight_decay=0.0001",
+    "selection": "best validation macro F1",
+    "python": "3.12.3",
+    "torch": "2.15.0+cpu",
+    "numpy": "1.26.4",
+    "sklearn": "1.4.2"
+  },
+  "source_files_and_raw_ranges": [
+    {
+      "file": "97.mat",
+      "cls": 0,
+      "label": "Normal",
+      "split": "train",
+      "raw_start": 0,
+      "raw_end_exclusive": 146362,
+      "windows": 570
+    },
+    {
+      "file": "97.mat",
+      "cls": 0,
+      "label": "Normal",
+      "split": "validation",
+      "raw_start": 146362,
+      "raw_end_exclusive": 195150,
+      "windows": 189
+    },
+    {
+      "file": "97.mat",
+      "cls": 0,
+      "label": "Normal",
+      "split": "test",
+      "raw_start": 195150,
+      "raw_end_exclusive": 243938,
+      "windows": 189
+    },
+    {
+      "file": "105.mat",
+      "cls": 1,
+      "label": "Inner Race",
+      "split": "train",
+      "raw_start": 0,
+      "raw_end_exclusive": 72759,
+      "windows": 283
+    },
+    {
+      "file": "105.mat",
+      "cls": 1,
+      "label": "Inner Race",
+      "split": "validation",
+      "raw_start": 72759,
+      "raw_end_exclusive": 97012,
+      "windows": 93
+    },
+    {
+      "file": "105.mat",
+      "cls": 1,
+      "label": "Inner Race",
+      "split": "test",
+      "raw_start": 97012,
+      "raw_end_exclusive": 121265,
+      "windows": 93
+    },
+    {
+      "file": "130.mat",
+      "cls": 2,
+      "label": "Outer Race",
+      "split": "train",
+      "raw_start": 0,
+      "raw_end_exclusive": 73194,
+      "windows": 284
+    },
+    {
+      "file": "130.mat",
+      "cls": 2,
+      "label": "Outer Race",
+      "split": "validation",
+      "raw_start": 73194,
+      "raw_end_exclusive": 97592,
+      "windows": 94
+    },
+    {
+      "file": "130.mat",
+      "cls": 2,
+      "label": "Outer Race",
+      "split": "test",
+      "raw_start": 97592,
+      "raw_end_exclusive": 121991,
+      "windows": 94
+    },
+    {
+      "file": "118.mat",
+      "cls": 3,
+      "label": "Ball",
+      "split": "train",
+      "raw_start": 0,
+      "raw_end_exclusive": 73542,
+      "windows": 286
+    },
+    {
+      "file": "118.mat",
+      "cls": 3,
+      "label": "Ball",
+      "split": "validation",
+      "raw_start": 73542,
+      "raw_end_exclusive": 98056,
+      "windows": 94
+    },
+    {
+      "file": "118.mat",
+      "cls": 3,
+      "label": "Ball",
+      "split": "test",
+      "raw_start": 98056,
+      "raw_end_exclusive": 122571,
+      "windows": 94
+    }
+  ],
+  "class_counts_train": [
+    570,
+    283,
+    284,
+    286
+  ],
+  "best_epoch": 1,
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.4370797102562743,
+      "validation_accuracy": 1.0,
+      "validation_macro_f1": 1.0
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.014544192427678985,
+      "validation_accuracy": 1.0,
+      "validation_macro_f1": 1.0
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.004533381701675483,
+      "validation_accuracy": 1.0,
+      "validation_macro_f1": 1.0
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.0030047140951063524,
+      "validation_accuracy": 1.0,
+      "validation_macro_f1": 1.0
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.0023081449530652225,
+      "validation_accuracy": 1.0,
+      "validation_macro_f1": 1.0
+    },
+    {
+      "epoch": 6,
+      "train_loss": 0.0018556597237642108,
+      "validation_accuracy": 1.0,
+      "validation_macro_f1": 1.0
+    },
+    {
+      "epoch": 7,
+      "train_loss": 0.0015333227231412686,
+      "validation_accuracy": 1.0,
+      "validation_macro_f1": 1.0
+    },
+    {
+      "epoch": 8,
+      "train_loss": 0.0012892583172895323,
+      "validation_accuracy": 1.0,
+      "validation_macro_f1": 1.0
+    },
+    {
+      "epoch": 9,
+      "train_loss": 0.0011002818001100423,
+      "validation_accuracy": 1.0,
+      "validation_macro_f1": 1.0
+    },
+    {
+      "epoch": 10,
+      "train_loss": 0.0009527066493444852,
+      "validation_accuracy": 1.0,
+      "validation_macro_f1": 1.0
+    },
+    {
+      "epoch": 11,
+      "train_loss": 0.0008327209980384783,
+      "validation_accuracy": 1.0,
+      "validation_macro_f1": 1.0
+    }
+  ],
+  "test_clean_0hp": {
+    "n": 470,
+    "accuracy": 1.0,
+    "macro_f1": 1.0,
+    "class_order": [
+      "Normal",
+      "Inner Race",
+      "Outer Race",
+      "Ball"
+    ],
+    "confusion_matrix_rows_true_columns_predicted": [
+      [
+        189,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        93,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        94,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        94
+      ]
+    ],
+    "per_class": {
+      "Normal": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 189.0
+      },
+      "Inner Race": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 93.0
+      },
+      "Outer Race": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 94.0
+      },
+      "Ball": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 94.0
+      },
+      "accuracy": 1.0,
+      "macro avg": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 470.0
+      },
+      "weighted avg": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 470.0
+      }
+    }
+  },
+  "test_awgn_0hp_by_snr_db": {
+    "10": {
+      "n": 470,
+      "accuracy": 0.902127659574468,
+      "macro_f1": 0.9162161466378334,
+      "class_order": [
+        "Normal",
+        "Inner Race",
+        "Outer Race",
+        "Ball"
+      ],
+      "confusion_matrix_rows_true_columns_predicted": [
+        [
+          143,
+          0,
+          0,
+          46
+        ],
+        [
+          0,
+          93,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          94,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          94
+        ]
+      ],
+      "per_class": {
+        "Normal": {
+          "precision": 1.0,
+          "recall": 0.7566137566137566,
+          "f1-score": 0.8614457831325302,
+          "support": 189.0
+        },
+        "Inner Race": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 93.0
+        },
+        "Outer Race": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 94.0
+        },
+        "Ball": {
+          "precision": 0.6714285714285714,
+          "recall": 1.0,
+          "f1-score": 0.8034188034188035,
+          "support": 94.0
+        },
+        "accuracy": 0.902127659574468,
+        "macro avg": {
+          "precision": 0.9178571428571428,
+          "recall": 0.9391534391534392,
+          "f1-score": 0.9162161466378334,
+          "support": 470.0
+        },
+        "weighted avg": {
+          "precision": 0.9342857142857143,
+          "recall": 0.902127659574468,
+          "f1-score": 0.9049672777306719,
+          "support": 470.0
+        }
+      }
+    },
+    "5": {
+      "n": 470,
+      "accuracy": 0.3851063829787234,
+      "macro_f1": 0.3935072471413687,
+      "class_order": [
+        "Normal",
+        "Inner Race",
+        "Outer Race",
+        "Ball"
+      ],
+      "confusion_matrix_rows_true_columns_predicted": [
+        [
+          0,
+          0,
+          0,
+          189
+        ],
+        [
+          0,
+          65,
+          28,
+          0
+        ],
+        [
+          0,
+          0,
+          94,
+          0
+        ],
+        [
+          0,
+          68,
+          4,
+          22
+        ]
+      ],
+      "per_class": {
+        "Normal": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 189.0
+        },
+        "Inner Race": {
+          "precision": 0.48872180451127817,
+          "recall": 0.6989247311827957,
+          "f1-score": 0.5752212389380531,
+          "support": 93.0
+        },
+        "Outer Race": {
+          "precision": 0.746031746031746,
+          "recall": 1.0,
+          "f1-score": 0.8545454545454545,
+          "support": 94.0
+        },
+        "Ball": {
+          "precision": 0.10426540284360189,
+          "recall": 0.23404255319148937,
+          "f1-score": 0.14426229508196722,
+          "support": 94.0
+        },
+        "accuracy": 0.3851063829787234,
+        "macro avg": {
+          "precision": 0.33475473834665653,
+          "recall": 0.4832418210935713,
+          "f1-score": 0.3935072471413687,
+          "support": 470.0
+        },
+        "weighted avg": {
+          "precision": 0.2667639570507055,
+          "recall": 0.3851063829787234,
+          "f1-score": 0.313581922736631,
+          "support": 470.0
+        }
+      }
+    },
+    "0": {
+      "n": 470,
+      "accuracy": 0.20212765957446807,
+      "macro_f1": 0.13948778532551367,
+      "class_order": [
+        "Normal",
+        "Inner Race",
+        "Outer Race",
+        "Ball"
+      ],
+      "confusion_matrix_rows_true_columns_predicted": [
+        [
+          0,
+          10,
+          5,
+          174
+        ],
+        [
+          0,
+          1,
+          92,
+          0
+        ],
+        [
+          0,
+          0,
+          94,
+          0
+        ],
+        [
+          0,
+          33,
+          61,
+          0
+        ]
+      ],
+      "per_class": {
+        "Normal": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 189.0
+        },
+        "Inner Race": {
+          "precision": 0.022727272727272728,
+          "recall": 0.010752688172043012,
+          "f1-score": 0.014598540145985401,
+          "support": 93.0
+        },
+        "Outer Race": {
+          "precision": 0.373015873015873,
+          "recall": 1.0,
+          "f1-score": 0.5433526011560693,
+          "support": 94.0
+        },
+        "Ball": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 94.0
+        },
+        "accuracy": 0.20212765957446807,
+        "macro avg": {
+          "precision": 0.09893578643578643,
+          "recall": 0.25268817204301075,
+          "f1-score": 0.13948778532551367,
+          "support": 470.0
+        },
+        "weighted avg": {
+          "precision": 0.07910027324920943,
+          "recall": 0.20212765957446807,
+          "f1-score": 0.11155916753669609,
+          "support": 470.0
+        }
+      }
+    },
+    "-2": {
+      "n": 470,
+      "accuracy": 0.2,
+      "macro_f1": 0.11435523114355231,
+      "class_order": [
+        "Normal",
+        "Inner Race",
+        "Outer Race",
+        "Ball"
+      ],
+      "confusion_matrix_rows_true_columns_predicted": [
+        [
+          0,
+          60,
+          55,
+          74
+        ],
+        [
+          0,
+          0,
+          93,
+          0
+        ],
+        [
+          0,
+          0,
+          94,
+          0
+        ],
+        [
+          0,
+          19,
+          75,
+          0
+        ]
+      ],
+      "per_class": {
+        "Normal": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 189.0
+        },
+        "Inner Race": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 93.0
+        },
+        "Outer Race": {
+          "precision": 0.29652996845425866,
+          "recall": 1.0,
+          "f1-score": 0.45742092457420924,
+          "support": 94.0
+        },
+        "Ball": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 94.0
+        },
+        "accuracy": 0.2,
+        "macro avg": {
+          "precision": 0.07413249211356467,
+          "recall": 0.25,
+          "f1-score": 0.11435523114355231,
+          "support": 470.0
+        },
+        "weighted avg": {
+          "precision": 0.05930599369085173,
+          "recall": 0.2,
+          "f1-score": 0.09148418491484185,
+          "support": 470.0
+        }
+      }
+    },
+    "-4": {
+      "n": 470,
+      "accuracy": 0.2,
+      "macro_f1": 0.10514541387024609,
+      "class_order": [
+        "Normal",
+        "Inner Race",
+        "Outer Race",
+        "Ball"
+      ],
+      "confusion_matrix_rows_true_columns_predicted": [
+        [
+          0,
+          97,
+          84,
+          8
+        ],
+        [
+          0,
+          0,
+          93,
+          0
+        ],
+        [
+          0,
+          0,
+          94,
+          0
+        ],
+        [
+          0,
+          12,
+          82,
+          0
+        ]
+      ],
+      "per_class": {
+        "Normal": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 189.0
+        },
+        "Inner Race": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 93.0
+        },
+        "Outer Race": {
+          "precision": 0.26628895184135976,
+          "recall": 1.0,
+          "f1-score": 0.42058165548098436,
+          "support": 94.0
+        },
+        "Ball": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 94.0
+        },
+        "accuracy": 0.2,
+        "macro avg": {
+          "precision": 0.06657223796033994,
+          "recall": 0.25,
+          "f1-score": 0.10514541387024609,
+          "support": 470.0
+        },
+        "weighted avg": {
+          "precision": 0.053257790368271954,
+          "recall": 0.2,
+          "f1-score": 0.08411633109619687,
+          "support": 470.0
+        }
+      }
+    },
+    "-6": {
+      "n": 470,
+      "accuracy": 0.2,
+      "macro_f1": 0.09381237524950099,
+      "class_order": [
+        "Normal",
+        "Inner Race",
+        "Outer Race",
+        "Ball"
+      ],
+      "confusion_matrix_rows_true_columns_predicted": [
+        [
+          0,
+          57,
+          132,
+          0
+        ],
+        [
+          0,
+          0,
+          93,
+          0
+        ],
+        [
+          0,
+          0,
+          94,
+          0
+        ],
+        [
+          0,
+          6,
+          88,
+          0
+        ]
+      ],
+      "per_class": {
+        "Normal": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 189.0
+        },
+        "Inner Race": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 93.0
+        },
+        "Outer Race": {
+          "precision": 0.23095823095823095,
+          "recall": 1.0,
+          "f1-score": 0.37524950099800397,
+          "support": 94.0
+        },
+        "Ball": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 94.0
+        },
+        "accuracy": 0.2,
+        "macro avg": {
+          "precision": 0.05773955773955774,
+          "recall": 0.25,
+          "f1-score": 0.09381237524950099,
+          "support": 470.0
+        },
+        "weighted avg": {
+          "precision": 0.046191646191646195,
+          "recall": 0.2,
+          "f1-score": 0.07504990019960078,
+          "support": 470.0
+        }
+      }
+    },
+    "-8": {
+      "n": 470,
+      "accuracy": 0.2,
+      "macro_f1": 0.08483754512635379,
+      "class_order": [
+        "Normal",
+        "Inner Race",
+        "Outer Race",
+        "Ball"
+      ],
+      "confusion_matrix_rows_true_columns_predicted": [
+        [
+          0,
+          10,
+          179,
+          0
+        ],
+        [
+          0,
+          0,
+          93,
+          0
+        ],
+        [
+          0,
+          0,
+          94,
+          0
+        ],
+        [
+          0,
+          0,
+          94,
+          0
+        ]
+      ],
+      "per_class": {
+        "Normal": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 189.0
+        },
+        "Inner Race": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 93.0
+        },
+        "Outer Race": {
+          "precision": 0.20434782608695654,
+          "recall": 1.0,
+          "f1-score": 0.33935018050541516,
+          "support": 94.0
+        },
+        "Ball": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 94.0
+        },
+        "accuracy": 0.2,
+        "macro avg": {
+          "precision": 0.051086956521739134,
+          "recall": 0.25,
+          "f1-score": 0.08483754512635379,
+          "support": 470.0
+        },
+        "weighted avg": {
+          "precision": 0.04086956521739131,
+          "recall": 0.2,
+          "f1-score": 0.06787003610108303,
+          "support": 470.0
+        }
+      }
+    },
+    "-10": {
+      "n": 470,
+      "accuracy": 0.2,
+      "macro_f1": 0.08576642335766424,
+      "class_order": [
+        "Normal",
+        "Inner Race",
+        "Outer Race",
+        "Ball"
+      ],
+      "confusion_matrix_rows_true_columns_predicted": [
+        [
+          0,
+          16,
+          173,
+          0
+        ],
+        [
+          0,
+          0,
+          93,
+          0
+        ],
+        [
+          0,
+          0,
+          94,
+          0
+        ],
+        [
+          0,
+          0,
+          94,
+          0
+        ]
+      ],
+      "per_class": {
+        "Normal": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 189.0
+        },
+        "Inner Race": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 93.0
+        },
+        "Outer Race": {
+          "precision": 0.20704845814977973,
+          "recall": 1.0,
+          "f1-score": 0.34306569343065696,
+          "support": 94.0
+        },
+        "Ball": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 94.0
+        },
+        "accuracy": 0.2,
+        "macro avg": {
+          "precision": 0.051762114537444934,
+          "recall": 0.25,
+          "f1-score": 0.08576642335766424,
+          "support": 470.0
+        },
+        "weighted avg": {
+          "precision": 0.041409691629955954,
+          "recall": 0.2,
+          "f1-score": 0.06861313868613139,
+          "support": 470.0
+        }
+      }
+    }
+  },
+  "cross_load_1hp_clean": {
+    "n": 3314,
+    "accuracy": 1.0,
+    "macro_f1": 1.0,
+    "class_order": [
+      "Normal",
+      "Inner Race",
+      "Outer Race",
+      "Ball"
+    ],
+    "confusion_matrix_rows_true_columns_predicted": [
+      [
+        1889,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        475,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        477,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        473
+      ]
+    ],
+    "per_class": {
+      "Normal": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 1889.0
+      },
+      "Inner Race": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 475.0
+      },
+      "Outer Race": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 477.0
+      },
+      "Ball": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 473.0
+      },
+      "accuracy": 1.0,
+      "macro avg": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 3314.0
+      },
+      "weighted avg": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 3314.0
+      }
+    }
+  }
+}

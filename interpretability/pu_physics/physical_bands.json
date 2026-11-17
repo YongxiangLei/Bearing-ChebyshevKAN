@@ -1,0 +1,478 @@
+{
+  "model_accuracy_on_frequency_audit_subset": 0.33181818181818185,
+  "test_count": 1100,
+  "n_bearings": 6,
+  "excluded_from_hz_audit": "100 windows from KI07 recording 2: 274149 timestamps spanning about 4 s, 24989 intervals below 10us; mismatch with nominal 64k. Cause and actual sampling unknown; excluded from Hz mapping only.",
+  "source_model": "PU 1024-point, raw time-standardized window, rFFT magnitude (513 bins), train-only feature standardization",
+  "sample_rate_nominal_hz": 64000,
+  "bin_spacing_hz": 62.5,
+  "nominal_shaft_rpm": 1500,
+  "reference_is_not_verified_bearing_model": "NTN/SNR 6203FT150, https://docs.rs-online.com/a404/A700000014892791.pdf; model identification of actual PU bearings not established",
+  "bpfo_reference_hz": 76.325,
+  "bpfi_reference_hz": 123.675,
+  "nearest_bins": {
+    "bpfo": 1,
+    "bpfi": 2
+  },
+  "reference_harmonics_bins": {
+    "outer_fundamental_example_bin_1": [
+      1
+    ],
+    "inner_fundamental_example_bin_2": [
+      2
+    ],
+    "outer_1st_to_3rd_harmonic_example_bins": [
+      1,
+      2,
+      4
+    ],
+    "inner_1st_to_3rd_harmonic_example_bins": [
+      2,
+      4,
+      6
+    ],
+    "both_example_harmonics": [
+      1,
+      2,
+      4,
+      6
+    ],
+    "low_62_5_to_500hz_bins_1_to_8": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ]
+  },
+  "interpretation_limits": [
+    "Frequency-bin interpolation is not frequency resolution; exact bearing geometry and bearing-specific reference frequencies unverified.",
+    "Raw acceleration FFT is not demodulated envelope spectrum; high-frequency resonances may encode the impact rate.",
+    "Attribution values are for the original predicted class versus its original runner-up, not necessarily the actual class.",
+    "Masking swaps standardized FFT to training feature mean, which can be out of distribution and is not a physical intervention.",
+    "Overlapping harmonic bins and only two test bearings per class do not establish frequency-specific physics alignment."
+  ],
+  "single_bin_ablation_1100_windows": {
+    "1": {
+      "frequency_hz_nominal": 62.5,
+      "changed_prediction_fraction": 0.004545454545454545,
+      "mean_margin_drop": -0.0014441699022427201
+    },
+    "2": {
+      "frequency_hz_nominal": 125.0,
+      "changed_prediction_fraction": 0.0,
+      "mean_margin_drop": 0.004997256677597761
+    },
+    "3": {
+      "frequency_hz_nominal": 187.5,
+      "changed_prediction_fraction": 0.0,
+      "mean_margin_drop": 0.0022516660392284393
+    },
+    "4": {
+      "frequency_hz_nominal": 250.0,
+      "changed_prediction_fraction": 0.0018181818181818182,
+      "mean_margin_drop": -0.00129590870346874
+    },
+    "5": {
+      "frequency_hz_nominal": 312.5,
+      "changed_prediction_fraction": 0.0,
+      "mean_margin_drop": 0.0013988390564918518
+    },
+    "6": {
+      "frequency_hz_nominal": 375.0,
+      "changed_prediction_fraction": 0.0009090909090909091,
+      "mean_margin_drop": 0.002250503748655319
+    },
+    "7": {
+      "frequency_hz_nominal": 437.5,
+      "changed_prediction_fraction": 0.0009090909090909091,
+      "mean_margin_drop": 0.008598198182880878
+    },
+    "8": {
+      "frequency_hz_nominal": 500.0,
+      "changed_prediction_fraction": 0.0009090909090909091,
+      "mean_margin_drop": 0.004194880370050669
+    }
+  },
+  "per_bearing": {
+    "K005": {
+      "n": 200,
+      "true_class": 0,
+      "accuracy": 0.0,
+      "mean_abs_ig_share": {
+        "outer_fundamental_example_bin_1": 0.0017927803564816713,
+        "inner_fundamental_example_bin_2": 0.0011119365226477385,
+        "outer_1st_to_3rd_harmonic_example_bins": 0.007167196366935968,
+        "inner_1st_to_3rd_harmonic_example_bins": 0.006763678975403309,
+        "both_example_harmonics": 0.008556459099054337,
+        "low_62_5_to_500hz_bins_1_to_8": 0.016223270446062088
+      },
+      "top_10_bins_by_mean_abs_ig": [
+        115,
+        29,
+        13,
+        483,
+        218,
+        158,
+        306,
+        129,
+        53,
+        11
+      ]
+    },
+    "K006": {
+      "n": 200,
+      "true_class": 0,
+      "accuracy": 1.0,
+      "mean_abs_ig_share": {
+        "outer_fundamental_example_bin_1": 0.0038259115535765886,
+        "inner_fundamental_example_bin_2": 0.0011883913539350033,
+        "outer_1st_to_3rd_harmonic_example_bins": 0.007543317042291164,
+        "inner_1st_to_3rd_harmonic_example_bins": 0.004733854439109564,
+        "both_example_harmonics": 0.00855976715683937,
+        "low_62_5_to_500hz_bins_1_to_8": 0.014593023806810379
+      },
+      "top_10_bins_by_mean_abs_ig": [
+        156,
+        59,
+        239,
+        1,
+        272,
+        21,
+        333,
+        491,
+        158,
+        273
+      ]
+    },
+    "KA06": {
+      "n": 200,
+      "true_class": 2,
+      "accuracy": 0.0,
+      "mean_abs_ig_share": {
+        "outer_fundamental_example_bin_1": 0.002401860896497965,
+        "inner_fundamental_example_bin_2": 0.0013832758413627744,
+        "outer_1st_to_3rd_harmonic_example_bins": 0.005850592162460089,
+        "inner_1st_to_3rd_harmonic_example_bins": 0.0048562586307525635,
+        "both_example_harmonics": 0.007258119527250528,
+        "low_62_5_to_500hz_bins_1_to_8": 0.014567558653652668
+      },
+      "top_10_bins_by_mean_abs_ig": [
+        93,
+        22,
+        333,
+        154,
+        186,
+        20,
+        115,
+        210,
+        64,
+        23
+      ]
+    },
+    "KA07": {
+      "n": 200,
+      "true_class": 2,
+      "accuracy": 0.0,
+      "mean_abs_ig_share": {
+        "outer_fundamental_example_bin_1": 0.00221313931979239,
+        "inner_fundamental_example_bin_2": 0.0014621642185375094,
+        "outer_1st_to_3rd_harmonic_example_bins": 0.005998590961098671,
+        "inner_1st_to_3rd_harmonic_example_bins": 0.005656821187585592,
+        "both_example_harmonics": 0.0078699616715312,
+        "low_62_5_to_500hz_bins_1_to_8": 0.016296837478876114
+      },
+      "top_10_bins_by_mean_abs_ig": [
+        19,
+        33,
+        32,
+        29,
+        154,
+        93,
+        20,
+        37,
+        160,
+        42
+      ]
+    },
+    "KI07": {
+      "n": 100,
+      "true_class": 1,
+      "accuracy": 0.92,
+      "mean_abs_ig_share": {
+        "outer_fundamental_example_bin_1": 0.001961797708645463,
+        "inner_fundamental_example_bin_2": 0.0013341658050194383,
+        "outer_1st_to_3rd_harmonic_example_bins": 0.006058836355805397,
+        "inner_1st_to_3rd_harmonic_example_bins": 0.005784385837614536,
+        "both_example_harmonics": 0.00774618424475193,
+        "low_62_5_to_500hz_bins_1_to_8": 0.016022734344005585
+      },
+      "top_10_bins_by_mean_abs_ig": [
+        115,
+        93,
+        140,
+        345,
+        21,
+        59,
+        116,
+        122,
+        16,
+        306
+      ]
+    },
+    "KI16": {
+      "n": 200,
+      "true_class": 1,
+      "accuracy": 0.365,
+      "mean_abs_ig_share": {
+        "outer_fundamental_example_bin_1": 0.0009004931198433042,
+        "inner_fundamental_example_bin_2": 0.0011371164582669735,
+        "outer_1st_to_3rd_harmonic_example_bins": 0.005917551927268505,
+        "inner_1st_to_3rd_harmonic_example_bins": 0.006453163456171751,
+        "both_example_harmonics": 0.007353656459599733,
+        "low_62_5_to_500hz_bins_1_to_8": 0.014871076680719852
+      },
+      "top_10_bins_by_mean_abs_ig": [
+        13,
+        451,
+        343,
+        316,
+        418,
+        306,
+        382,
+        14,
+        483,
+        311
+      ]
+    }
+  },
+  "measurement_metadata": [
+    {
+      "bearing": "K005",
+      "record": 1,
+      "time_field": "X[1]['Data']",
+      "raster": "HostService",
+      "unit": "[]",
+      "start": 0.0,
+      "end": 3.99999957227632,
+      "vibration_count": 256001,
+      "mean_sample_rate_hz_from_endpoints": 64000.00684357961,
+      "median_interval_us": 15.825776168654215,
+      "min_interval_us": 14.970328808301767,
+      "max_interval_us": 15.825776169098305,
+      "intervals_below_10us": 0,
+      "nonincreasing_intervals": 0,
+      "speed_mean_raw": 1499.6165345258767,
+      "speed_std_raw": 0.396482384674869
+    },
+    {
+      "bearing": "K005",
+      "record": 2,
+      "time_field": "X[1]['Data']",
+      "raster": "HostService",
+      "unit": "[]",
+      "start": 0.0,
+      "end": 4.0,
+      "vibration_count": 256001,
+      "mean_sample_rate_hz_from_endpoints": 64000.0,
+      "median_interval_us": 15.825776168654215,
+      "min_interval_us": 14.970328808301767,
+      "max_interval_us": 15.825776169098305,
+      "intervals_below_10us": 0,
+      "nonincreasing_intervals": 0,
+      "speed_mean_raw": 1499.6295294370711,
+      "speed_std_raw": 0.3752550942232974
+    },
+    {
+      "bearing": "K006",
+      "record": 1,
+      "time_field": "X[1]['Data']",
+      "raster": "HostService",
+      "unit": "[]",
+      "start": 0.0,
+      "end": 3.999999572271014,
+      "vibration_count": 256001,
+      "mean_sample_rate_hz_from_endpoints": 64000.00684366451,
+      "median_interval_us": 15.825972473848537,
+      "min_interval_us": 15.398243487840801,
+      "max_interval_us": 15.825972474292627,
+      "intervals_below_10us": 0,
+      "nonincreasing_intervals": 0,
+      "speed_mean_raw": 1499.5407148650856,
+      "speed_std_raw": 0.11723919992424797
+    },
+    {
+      "bearing": "K006",
+      "record": 2,
+      "time_field": "X[1]['Data']",
+      "raster": "HostService",
+      "unit": "[]",
+      "start": 0.0,
+      "end": 4.0,
+      "vibration_count": 256001,
+      "mean_sample_rate_hz_from_endpoints": 64000.0,
+      "median_interval_us": 15.825972473848537,
+      "min_interval_us": 14.970514502365193,
+      "max_interval_us": 16.253701459412184,
+      "intervals_below_10us": 0,
+      "nonincreasing_intervals": 0,
+      "speed_mean_raw": 1499.5637600033438,
+      "speed_std_raw": 0.13659995756794685
+    },
+    {
+      "bearing": "KA06",
+      "record": 1,
+      "time_field": "X[1]['Data']",
+      "raster": "HostService",
+      "unit": "[]",
+      "start": -1.1121001198155511e-05,
+      "end": 3.9999914453836936,
+      "vibration_count": 256083,
+      "mean_sample_rate_hz_from_endpoints": 64020.45892471537,
+      "median_interval_us": 15.826040166366795,
+      "min_interval_us": 15.398309351155604,
+      "max_interval_us": 15.826040167254973,
+      "intervals_below_10us": 0,
+      "nonincreasing_intervals": 0,
+      "speed_mean_raw": 1499.7309346878958,
+      "speed_std_raw": 0.9212039696255433
+    },
+    {
+      "bearing": "KA06",
+      "record": 2,
+      "time_field": "X[1]['Data']",
+      "raster": "HostService",
+      "unit": "[]",
+      "start": 0.0,
+      "end": 3.999999572269185,
+      "vibration_count": 256001,
+      "mean_sample_rate_hz_from_endpoints": 64000.00684369377,
+      "median_interval_us": 15.826040166366795,
+      "min_interval_us": 14.970578535868952,
+      "max_interval_us": 15.826040166810884,
+      "intervals_below_10us": 0,
+      "nonincreasing_intervals": 0,
+      "speed_mean_raw": 1499.8034396505916,
+      "speed_std_raw": 0.5049177823036148
+    },
+    {
+      "bearing": "KA07",
+      "record": 1,
+      "time_field": "X[1]['Data']",
+      "raster": "HostService",
+      "unit": "[]",
+      "start": 0.0,
+      "end": 3.9999995722763195,
+      "vibration_count": 256001,
+      "mean_sample_rate_hz_from_endpoints": 64000.00684357962,
+      "median_interval_us": 15.825776168654215,
+      "min_interval_us": 15.39805248818027,
+      "max_interval_us": 15.825776169098305,
+      "intervals_below_10us": 0,
+      "nonincreasing_intervals": 0,
+      "speed_mean_raw": 1499.418158749766,
+      "speed_std_raw": 0.7139088842265219
+    },
+    {
+      "bearing": "KA07",
+      "record": 2,
+      "time_field": "X[1]['Data']",
+      "raster": "HostService",
+      "unit": "[]",
+      "start": 0.0,
+      "end": 3.9999991445526395,
+      "vibration_count": 256001,
+      "mean_sample_rate_hz_from_endpoints": 64000.013687160696,
+      "median_interval_us": 15.825776168654215,
+      "min_interval_us": 14.970328808150413,
+      "max_interval_us": 15.825776169098305,
+      "intervals_below_10us": 0,
+      "nonincreasing_intervals": 0,
+      "speed_mean_raw": 1499.7030637690407,
+      "speed_std_raw": 0.49988803956732725
+    },
+    {
+      "bearing": "KI07",
+      "record": 1,
+      "time_field": "X[1]['Data']",
+      "raster": "HostService",
+      "unit": "[]",
+      "start": 0.0,
+      "end": 3.999994439592157,
+      "vibration_count": 256000,
+      "mean_sample_rate_hz_from_endpoints": 63999.838966301635,
+      "median_interval_us": 15.825776168654215,
+      "min_interval_us": 4.277236802519013,
+      "max_interval_us": 43.62781538391758,
+      "intervals_below_10us": 2,
+      "nonincreasing_intervals": 0,
+      "speed_mean_raw": 1499.2716710953018,
+      "speed_std_raw": 2.1788181538427907
+    },
+    {
+      "bearing": "KI07",
+      "record": 2,
+      "time_field": "X[1]['Data']",
+      "raster": "HostService",
+      "unit": "[]",
+      "start": 0.0,
+      "end": 3.9999965782105584,
+      "vibration_count": 274149,
+      "mean_sample_rate_hz_from_endpoints": 68537.0586298459,
+      "median_interval_us": 15.398052488624359,
+      "min_interval_us": 4.277236802074924,
+      "max_interval_us": 16.681223529602107,
+      "intervals_below_10us": 24989,
+      "nonincreasing_intervals": 0,
+      "speed_mean_raw": 1499.7815861485667,
+      "speed_std_raw": 0.5431123141898293
+    },
+    {
+      "bearing": "KI16",
+      "record": 1,
+      "time_field": "X[1]['Data']",
+      "raster": "HostService",
+      "unit": "[]",
+      "start": 0.0,
+      "end": 3.999999572278149,
+      "vibration_count": 256001,
+      "mean_sample_rate_hz_from_endpoints": 64000.00684355034,
+      "median_interval_us": 15.825708478356404,
+      "min_interval_us": 14.97026477693432,
+      "max_interval_us": 15.825708478800493,
+      "intervals_below_10us": 0,
+      "nonincreasing_intervals": 0,
+      "speed_mean_raw": 1499.5326374090669,
+      "speed_std_raw": 0.615442666367587
+    },
+    {
+      "bearing": "KI16",
+      "record": 2,
+      "time_field": "X[1]['Data']",
+      "raster": "HostService",
+      "unit": "[]",
+      "start": 0.0,
+      "end": 3.999987168344477,
+      "vibration_count": 256000,
+      "mean_sample_rate_hz_from_endpoints": 63999.95530634499,
+      "median_interval_us": 15.825708478356404,
+      "min_interval_us": 14.970264776934753,
+      "max_interval_us": 19.675205135349927,
+      "intervals_below_10us": 0,
+      "nonincreasing_intervals": 0,
+      "speed_mean_raw": 1500.078060007897,
+      "speed_std_raw": 0.7111603892925155
+    }
+  ],
+  "ki07_record_2_interpolation_sensitivity": {
+    "n": 100,
+    "method": "linear interpolation to 64kHz assuming timestamps in seconds; same original index starts except clipped final start; no retraining",
+    "original_accuracy": 0.99,
+    "interpolated_accuracy": 0.9,
+    "prediction_change_fraction": 0.09,
+    "not_proof_of_correction": "Acquisition timing and timestamps not verified; time interpolation is an assumption and may itself change signal."
+  }
+}

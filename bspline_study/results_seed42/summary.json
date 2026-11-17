@@ -1,0 +1,16 @@
+{
+  "completed_folds": 15,
+  "seed": 42,
+  "complete_15_bearings": true,
+  "protocol": "Same original CV folds and train-only scaling, degree-3 open-uniform B-spline KAN, width selected on 3 validation bearings",
+  "architecture": "phi(z)=sum c_k B_{k,3}(3*tanh(z/3)), z standardized input; each layer sums edge functions; 6 fixed equal intervals, 9 basis functions per edge; AdamW weight decay only, no explicit sparsity penalty",
+  "mae_macro_min": 288.2758067114771,
+  "rmse_macro_min": 349.09793286647584,
+  "late_overestimate_macro_min": 138.87000544382852,
+  "limitations": [
+    "Targets minutes until final recorded observation, not precise failure time.",
+    "Only 15 bearings, one validation split per outer fold; seen operating conditions.",
+    "Bounded tanh mapping compresses extreme values; curves are not raw-input splines or a proven physical law.",
+    "No explicit sparsity regularization."
+  ]
+}

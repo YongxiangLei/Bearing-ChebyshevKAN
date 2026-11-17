@@ -1,0 +1,222 @@
+{
+  "task": "CWRU fault-only attribution band description in raw magnitude FFT space",
+  "model": "cwru_augmented",
+  "sampling_hz": 12000,
+  "fft_length": 512,
+  "bin_spacing_hz": 23.4375,
+  "steps": 64,
+  "source": "https://engineering.case.edu/bearingdatacenter/bearing-information",
+  "rpm_source": "per-record MAT RPM variable (0hp fault files)",
+  "formula": "CWRU published defect-frequency multiplier times rpm / 60",
+  "basis": "Predicted-vs-runner-up logit margin IG relative to per-feature training mean. 1000 deterministic equal-size random-bin controls 1..42 (up to 984.375 Hz).",
+  "interpretation_caution": "Observational on 0hp held-out temporal intervals, one recording per class, overlapping windows. Averaged samples not independent. Raw FFT is not envelope spectrum: harmonics could be modulations of high-frequency resonances rather than prominent FFT components. Random control ignores spectral autocorrelation and class structure; mean baseline masking may be off manifold. Frequencies are nominal; bin resolution is coarse. Attribution is model reliance, not evidence of causal fault mechanism. The official 4.7135 multiplier represents rolling element characteristic and is ~2 times standard BSF definition.",
+  "classes": {
+    "Inner Race": {
+      "n_windows": 93,
+      "file": "105.mat",
+      "rpm": 1797.0,
+      "frequency_coefficient_official": 5.4152,
+      "frequency_hz": 162.18524,
+      "masks": {
+        "1_harmonics": {
+          "nearest_bins": [
+            7
+          ],
+          "bins": [
+            6,
+            7,
+            8
+          ],
+          "bin_hz": [
+            140.625,
+            164.062,
+            187.5
+          ],
+          "mean_abs_attribution_share": 0.006456323899328709,
+          "random_equal_count_bins_1_to_42_mean": 0.00912674330174923,
+          "random_control_2_5_97_5_percentiles": [
+            0.004947013861965388,
+            0.01765376073308289
+          ],
+          "mean_margin_drop_when_masked": -0.11839604377746582,
+          "flipped_count": 0
+        },
+        "3_harmonics": {
+          "nearest_bins": [
+            7,
+            14,
+            21
+          ],
+          "bins": [
+            6,
+            7,
+            8,
+            13,
+            14,
+            15,
+            20,
+            21,
+            22
+          ],
+          "bin_hz": [
+            140.625,
+            164.062,
+            187.5,
+            304.688,
+            328.125,
+            351.562,
+            468.75,
+            492.188,
+            515.625
+          ],
+          "mean_abs_attribution_share": 0.01808803156018257,
+          "random_equal_count_bins_1_to_42_mean": 0.02730773389339447,
+          "random_control_2_5_97_5_percentiles": [
+            0.018626842927187682,
+            0.0399636385962367
+          ],
+          "mean_margin_drop_when_masked": -0.20186491310596466,
+          "flipped_count": 0
+        }
+      }
+    },
+    "Outer Race": {
+      "n_windows": 94,
+      "file": "130.mat",
+      "rpm": 1796.0,
+      "frequency_coefficient_official": 3.5848,
+      "frequency_hz": 107.30501333333333,
+      "masks": {
+        "1_harmonics": {
+          "nearest_bins": [
+            5
+          ],
+          "bins": [
+            4,
+            5,
+            6
+          ],
+          "bin_hz": [
+            93.75,
+            117.188,
+            140.625
+          ],
+          "mean_abs_attribution_share": 0.01025107130408287,
+          "random_equal_count_bins_1_to_42_mean": 0.007323091849684715,
+          "random_control_2_5_97_5_percentiles": [
+            0.003954492509365082,
+            0.01239214406814426
+          ],
+          "mean_margin_drop_when_masked": -0.03900114819407463,
+          "flipped_count": 0
+        },
+        "3_harmonics": {
+          "nearest_bins": [
+            5,
+            9,
+            14
+          ],
+          "bins": [
+            4,
+            5,
+            6,
+            8,
+            9,
+            10,
+            13,
+            14,
+            15
+          ],
+          "bin_hz": [
+            93.75,
+            117.188,
+            140.625,
+            187.5,
+            210.938,
+            234.375,
+            304.688,
+            328.125,
+            351.562
+          ],
+          "mean_abs_attribution_share": 0.030496343970298767,
+          "random_equal_count_bins_1_to_42_mean": 0.022220835089683533,
+          "random_control_2_5_97_5_percentiles": [
+            0.01607202934101224,
+            0.02996861473657191
+          ],
+          "mean_margin_drop_when_masked": -0.11623810976743698,
+          "flipped_count": 0
+        }
+      }
+    },
+    "Ball": {
+      "n_windows": 94,
+      "file": "118.mat",
+      "rpm": 1796.0,
+      "frequency_coefficient_official": 4.7135,
+      "frequency_hz": 141.09076666666667,
+      "masks": {
+        "1_harmonics": {
+          "nearest_bins": [
+            6
+          ],
+          "bins": [
+            5,
+            6,
+            7
+          ],
+          "bin_hz": [
+            117.188,
+            140.625,
+            164.062
+          ],
+          "mean_abs_attribution_share": 0.017150118947029114,
+          "random_equal_count_bins_1_to_42_mean": 0.01360257901251316,
+          "random_control_2_5_97_5_percentiles": [
+            0.005856926809065044,
+            0.02421264909207821
+          ],
+          "mean_margin_drop_when_masked": 0.5362011790275574,
+          "flipped_count": 0
+        },
+        "3_harmonics": {
+          "nearest_bins": [
+            6,
+            12,
+            18
+          ],
+          "bins": [
+            5,
+            6,
+            7,
+            11,
+            12,
+            13,
+            17,
+            18,
+            19
+          ],
+          "bin_hz": [
+            117.188,
+            140.625,
+            164.062,
+            257.812,
+            281.25,
+            304.688,
+            398.438,
+            421.875,
+            445.312
+          ],
+          "mean_abs_attribution_share": 0.04475583881139755,
+          "random_equal_count_bins_1_to_42_mean": 0.04094994440674782,
+          "random_control_2_5_97_5_percentiles": [
+            0.026744414307177066,
+            0.05632704133167863
+          ],
+          "mean_margin_drop_when_masked": 0.6689966320991516,
+          "flipped_count": 0
+        }
+      }
+    }
+  }
+}

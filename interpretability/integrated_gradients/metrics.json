@@ -1,0 +1,302 @@
+{
+  "model": "<project>\\cwru\\exp\\outputs\\cwru_augmented\\model.pt",
+  "test_n": 470,
+  "test_accuracy": 1.0,
+  "protocol": "0hp held-out final 20% temporal block per class, 512 samples, 50% overlap. Original augmented model and saved training normalization. Explain predicted-vs-runner-up logit margin with 64-midpoint integrated gradients along path from standardized FFT mean (zero).",
+  "limitations": [
+    "Mean-vector baseline and zeroing spectral bins may be off-manifold. Attribution is model reliance, not physical causation.",
+    "Train and test windows come from different time blocks of the same per-class recording; overlapping windows are correlated and do not constitute independent bearings.",
+    "Stability uses the same fixed original predicted class and runner-up margin before and after noise; top-k Jaccard is an explanation similarity, not ground-truth correctness.",
+    "12 kHz frequency mapping is applicable to 12 kHz fault recordings, but normal sampling rate is not established for these files."
+  ],
+  "ig_steps": 64,
+  "masked_feature_count": 26,
+  "masked_feature_fraction": 0.10116731517509728,
+  "completeness": {
+    "mean_absolute_margin_error": 0.0038616640958935022,
+    "median_absolute_margin_error": 0.002712249755859375,
+    "mean_abs_true_margin_delta": 6.802647113800049,
+    "mean_absolute_error_over_mean_abs_delta": 0.0005676707951352
+  },
+  "top26_share_of_absolute_attribution_mean": 0.38036635518074036,
+  "top26_share_of_absolute_attribution_median": 0.39851945638656616,
+  "masking_top26": {
+    "accuracy": 0.9446808695793152,
+    "prediction_flip_rate": 0.05531914904713631,
+    "mean_margin_drop": 2.8679299354553223,
+    "median_margin_drop": 3.131805896759033
+  },
+  "masking_top26_by_class": {
+    "Normal": {
+      "n": 189,
+      "prediction_flip_rate": 0.0,
+      "mean_margin_drop": 3.4025068283081055
+    },
+    "Inner Race": {
+      "n": 93,
+      "prediction_flip_rate": 0.0,
+      "mean_margin_drop": 2.3752965927124023
+    },
+    "Outer Race": {
+      "n": 94,
+      "prediction_flip_rate": 0.27659574151039124,
+      "mean_margin_drop": 3.937126874923706
+    },
+    "Ball": {
+      "n": 94,
+      "prediction_flip_rate": 0.0,
+      "mean_margin_drop": 1.2112853527069092
+    }
+  },
+  "masking_bottom26": {
+    "accuracy": 1.0,
+    "prediction_flip_rate": 0.0,
+    "mean_margin_drop": -0.0617072768509388,
+    "median_margin_drop": -0.0465087890625
+  },
+  "masking_random26_mean": {
+    "accuracy": 1.0,
+    "prediction_flip_rate": 0.0,
+    "mean_margin_drop": 0.1238883126527071,
+    "median_margin_drop": 0.10952870845794678,
+    "repeats": 20
+  },
+  "noise_stability": {
+    "20": {
+      "repeats": 5,
+      "mean_top26_jaccard": 0.8275368452072144,
+      "prediction_agreement": 1.0,
+      "test_accuracy": 1.0,
+      "draws": [
+        {
+          "seed": 2026,
+          "mean_top26_jaccard": 0.8222820162773132,
+          "prediction_agreement": 1.0,
+          "test_accuracy": 1.0
+        },
+        {
+          "seed": 2027,
+          "mean_top26_jaccard": 0.8345446586608887,
+          "prediction_agreement": 1.0,
+          "test_accuracy": 1.0
+        },
+        {
+          "seed": 2028,
+          "mean_top26_jaccard": 0.8260177373886108,
+          "prediction_agreement": 1.0,
+          "test_accuracy": 1.0
+        },
+        {
+          "seed": 2029,
+          "mean_top26_jaccard": 0.8285033106803894,
+          "prediction_agreement": 1.0,
+          "test_accuracy": 1.0
+        },
+        {
+          "seed": 2030,
+          "mean_top26_jaccard": 0.8263365030288696,
+          "prediction_agreement": 1.0,
+          "test_accuracy": 1.0
+        }
+      ]
+    },
+    "-4": {
+      "repeats": 5,
+      "mean_top26_jaccard": 0.37152799367904665,
+      "prediction_agreement": 1.0,
+      "test_accuracy": 1.0,
+      "draws": [
+        {
+          "seed": 2026,
+          "mean_top26_jaccard": 0.3731498420238495,
+          "prediction_agreement": 1.0,
+          "test_accuracy": 1.0
+        },
+        {
+          "seed": 2027,
+          "mean_top26_jaccard": 0.374371200799942,
+          "prediction_agreement": 1.0,
+          "test_accuracy": 1.0
+        },
+        {
+          "seed": 2028,
+          "mean_top26_jaccard": 0.37129151821136475,
+          "prediction_agreement": 1.0,
+          "test_accuracy": 1.0
+        },
+        {
+          "seed": 2029,
+          "mean_top26_jaccard": 0.36629751324653625,
+          "prediction_agreement": 1.0,
+          "test_accuracy": 1.0
+        },
+        {
+          "seed": 2030,
+          "mean_top26_jaccard": 0.37252989411354065,
+          "prediction_agreement": 1.0,
+          "test_accuracy": 1.0
+        }
+      ]
+    }
+  },
+  "class_top_bins": {
+    "Normal": {
+      "n": 189,
+      "top_10_bins": [
+        61,
+        144,
+        139,
+        146,
+        138,
+        140,
+        122,
+        130,
+        117,
+        109
+      ],
+      "top_10_hz_if_fs_12000": [
+        1429.688,
+        3375.0,
+        3257.812,
+        3421.875,
+        3234.375,
+        3281.25,
+        2859.375,
+        3046.875,
+        2742.188,
+        2554.688
+      ]
+    },
+    "Inner Race": {
+      "n": 93,
+      "top_10_bins": [
+        50,
+        116,
+        54,
+        56,
+        153,
+        112,
+        63,
+        118,
+        26,
+        158
+      ],
+      "top_10_hz_if_fs_12000": [
+        1171.875,
+        2718.75,
+        1265.625,
+        1312.5,
+        3585.938,
+        2625.0,
+        1476.562,
+        2765.625,
+        609.375,
+        3703.125
+      ]
+    },
+    "Outer Race": {
+      "n": 94,
+      "top_10_bins": [
+        142,
+        147,
+        143,
+        138,
+        148,
+        124,
+        129,
+        155,
+        120,
+        115
+      ],
+      "top_10_hz_if_fs_12000": [
+        3328.125,
+        3445.312,
+        3351.562,
+        3234.375,
+        3468.75,
+        2906.25,
+        3023.438,
+        3632.812,
+        2812.5,
+        2695.312
+      ]
+    },
+    "Ball": {
+      "n": 94,
+      "top_10_bins": [
+        152,
+        44,
+        119,
+        90,
+        155,
+        3,
+        12,
+        156,
+        151,
+        167
+      ],
+      "top_10_hz_if_fs_12000": [
+        3562.5,
+        1031.25,
+        2789.062,
+        2109.375,
+        3632.812,
+        70.312,
+        281.25,
+        3656.25,
+        3539.062,
+        3914.062
+      ]
+    }
+  },
+  "class_order": [
+    "Normal",
+    "Inner Race",
+    "Outer Race",
+    "Ball"
+  ],
+  "test_class_counts": [
+    189,
+    93,
+    94,
+    94
+  ],
+  "provenance": [
+    {
+      "file": "97.mat",
+      "cls": 0,
+      "label": "Normal",
+      "split": "test",
+      "raw_start": 195150,
+      "raw_end_exclusive": 243938,
+      "windows": 189
+    },
+    {
+      "file": "105.mat",
+      "cls": 1,
+      "label": "Inner Race",
+      "split": "test",
+      "raw_start": 97012,
+      "raw_end_exclusive": 121265,
+      "windows": 93
+    },
+    {
+      "file": "130.mat",
+      "cls": 2,
+      "label": "Outer Race",
+      "split": "test",
+      "raw_start": 97592,
+      "raw_end_exclusive": 121991,
+      "windows": 94
+    },
+    {
+      "file": "118.mat",
+      "cls": 3,
+      "label": "Ball",
+      "split": "test",
+      "raw_start": 98056,
+      "raw_end_exclusive": 122571,
+      "windows": 94
+    }
+  ]
+}

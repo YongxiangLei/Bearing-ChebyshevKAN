@@ -1,0 +1,116 @@
+{
+  "source": "Deng (2023), DOI 10.17632/65d3pzth7v.1",
+  "caveat": "Third-party preprocessing; equivalence to manuscript authors' arrays unverified",
+  "seed": 42,
+  "epochs": 15,
+  "device": "cpu",
+  "threads": 2,
+  "class_counts": [
+    1000,
+    1000,
+    1000,
+    1000,
+    1000,
+    1000,
+    1000,
+    1000
+  ],
+  "source_samples": 8000,
+  "target_samples": 8000,
+  "target_accuracy": 0.426375,
+  "target_correct": 3411,
+  "elapsed_seconds": 29.47344329999987,
+  "training_history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.8853787170648575,
+      "train_accuracy": 0.912125,
+      "seconds": 2.077453500000047
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.08589960819482803,
+      "train_accuracy": 1.0,
+      "seconds": 2.0017241999998987
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.02764209395647049,
+      "train_accuracy": 1.0,
+      "seconds": 1.8888847000002897
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.01610000543296337,
+      "train_accuracy": 1.0,
+      "seconds": 2.0379745999998704
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.011165343932807445,
+      "train_accuracy": 1.0,
+      "seconds": 2.0069017999999232
+    },
+    {
+      "epoch": 6,
+      "train_loss": 0.008513790056109428,
+      "train_accuracy": 1.0,
+      "seconds": 1.8899622999997518
+    },
+    {
+      "epoch": 7,
+      "train_loss": 0.006855570331215859,
+      "train_accuracy": 1.0,
+      "seconds": 1.8632975000000442
+    },
+    {
+      "epoch": 8,
+      "train_loss": 0.005805564235895872,
+      "train_accuracy": 1.0,
+      "seconds": 1.9379518999999163
+    },
+    {
+      "epoch": 9,
+      "train_loss": 0.00505648186057806,
+      "train_accuracy": 1.0,
+      "seconds": 1.9175758999999744
+    },
+    {
+      "epoch": 10,
+      "train_loss": 0.004446362305432558,
+      "train_accuracy": 1.0,
+      "seconds": 2.023999300000014
+    },
+    {
+      "epoch": 11,
+      "train_loss": 0.003961633643135429,
+      "train_accuracy": 1.0,
+      "seconds": 1.9327742999998918
+    },
+    {
+      "epoch": 12,
+      "train_loss": 0.0035219261944293974,
+      "train_accuracy": 1.0,
+      "seconds": 1.7216089999997166
+    },
+    {
+      "epoch": 13,
+      "train_loss": 0.0030446264576166867,
+      "train_accuracy": 1.0,
+      "seconds": 1.7679896999998164
+    },
+    {
+      "epoch": 14,
+      "train_loss": 0.0025972220860421657,
+      "train_accuracy": 1.0,
+      "seconds": 1.9173931000000266
+    },
+    {
+      "epoch": 15,
+      "train_loss": 0.00228557837754488,
+      "train_accuracy": 1.0,
+      "seconds": 1.9547437000001082
+    }
+  ],
+  "test_protocol": "FFT_0 training, FFT_1 evaluation once after fixed final epoch"
+}

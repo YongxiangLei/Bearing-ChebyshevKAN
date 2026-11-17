@@ -1,0 +1,31 @@
+{
+  "status": "passed",
+  "complete_15_bearings": true,
+  "independent_test_bearings": 15,
+  "seeds": [
+    44
+  ],
+  "folds": 15,
+  "records_per_full_seed": 9216,
+  "verified": [
+    "target and elapsed labels",
+    "split disjointness",
+    "one validation bearing per condition",
+    "training-only bearing-weighted scaler",
+    "saved checkpoint vs predictions",
+    "per-fold and per-bearing-averaged metrics",
+    "late-mask evaluation only"
+  ],
+  "max_abs_scaler_difference": 6.758682502550073e-11,
+  "max_abs_checkpoint_prediction_difference": {
+    "age_ridge": 4.0466829887009226e-10,
+    "features_ridge": 5.161382432561368e-10,
+    "mlp": 0.00010488281259313226,
+    "kan": 5.566406252910383e-05
+  },
+  "max_abs_metric_difference": 3.5215849720771075e-06,
+  "limitations": [
+    "Static audit and checkpoint reconstruction cannot prove absence of all data leakage or generalization to new conditions.",
+    "The three model seeds do not constitute extra independent bearing observations."
+  ]
+}

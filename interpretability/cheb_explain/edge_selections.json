@@ -1,0 +1,66 @@
+[
+  {
+    "feature": "horizontal_skewness",
+    "hidden_index": 6,
+    "training_range_5_95": [
+      -0.11691642062787633,
+      0.0395340082042989
+    ],
+    "training_mean": -0.021614690870421498,
+    "train_scale": 0.09901822137947922,
+    "selection": "maximum edge output standard deviation over training records, not test",
+    "test_bearing": "Bearing1_1",
+    "seed": 42,
+    "max_forward_error": 1.1394156734789718e-07,
+    "train_bearings": [
+      "Bearing1_3",
+      "Bearing1_4",
+      "Bearing1_5",
+      "Bearing2_1",
+      "Bearing2_2",
+      "Bearing2_3",
+      "Bearing2_5",
+      "Bearing3_1",
+      "Bearing3_2",
+      "Bearing3_3",
+      "Bearing3_5"
+    ],
+    "validation_bearings": [
+      "Bearing1_2",
+      "Bearing2_4",
+      "Bearing3_4"
+    ]
+  },
+  {
+    "feature": "vertical_rms",
+    "hidden_index": 4,
+    "training_range_5_95": [
+      0.4826786298257529,
+      4.489802665796371
+    ],
+    "training_mean": 1.9700374568515087,
+    "train_scale": 2.422265156433507,
+    "selection": "maximum edge output standard deviation over training records, not test",
+    "test_bearing": "Bearing1_1",
+    "seed": 42,
+    "max_forward_error": 2.0696409083753586e-07,
+    "train_bearings": [
+      "Bearing1_3",
+      "Bearing1_4",
+      "Bearing1_5",
+      "Bearing2_1",
+      "Bearing2_2",
+      "Bearing2_3",
+      "Bearing2_5",
+      "Bearing3_1",
+      "Bearing3_2",
+      "Bearing3_3",
+      "Bearing3_5"
+    ],
+    "validation_bearings": [
+      "Bearing1_2",
+      "Bearing2_4",
+      "Bearing3_4"
+    ]
+  }
+]

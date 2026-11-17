@@ -1,0 +1,658 @@
+{
+  "model": "<project>\\pu\\outputs\\model.pt",
+  "n_windows": 1200,
+  "n_bearings": 6,
+  "n_features": 513,
+  "test_accuracy": 0.3866666555404663,
+  "ig_steps": 64,
+  "k": 52,
+  "k_fraction": 0.10136452241715399,
+  "protocol": "whole-bearing holdout; two recordings and 100 nonoverlapping 1024-sample windows per bearing; original per-window z-score and FFT; saved train-only FFT scaling; IG for predicted vs runner-up logit margin with train-feature-mean baseline; add time-domain per-window-power AWGN before original preprocessing; hold clean classes fixed for IG on perturbed input",
+  "caveats": [
+    "Accuracy is low: model reliance is not proof of correct fault diagnosis or causal physical relevance.",
+    "Only 6 test bearings, 2 per class; windows and noise repeats are correlated, and do not estimate population uncertainty.",
+    "Zeroed standardized FFT features and straight path from mean may be out-of-distribution; attribution depends on baseline.",
+    "White noise is synthetic and -4 dB is strong; Jaccard compares fixed-class margin explanations even when predictions change."
+  ],
+  "sample_files": [
+    {
+      "bearing": "K005",
+      "label": "normal",
+      "file": "data\\PU\\selected_mat\\K005\\N15_M07_F10_K005_1.mat",
+      "recording": 1,
+      "windows": 100
+    },
+    {
+      "bearing": "K005",
+      "label": "normal",
+      "file": "data\\PU\\selected_mat\\K005\\N15_M07_F10_K005_2.mat",
+      "recording": 2,
+      "windows": 100
+    },
+    {
+      "bearing": "K006",
+      "label": "normal",
+      "file": "data\\PU\\selected_mat\\K006\\N15_M07_F10_K006_1.mat",
+      "recording": 1,
+      "windows": 100
+    },
+    {
+      "bearing": "K006",
+      "label": "normal",
+      "file": "data\\PU\\selected_mat\\K006\\N15_M07_F10_K006_2.mat",
+      "recording": 2,
+      "windows": 100
+    },
+    {
+      "bearing": "KI07",
+      "label": "inner",
+      "file": "data\\PU\\selected_mat\\KI07\\N15_M07_F10_KI07_1.mat",
+      "recording": 1,
+      "windows": 100
+    },
+    {
+      "bearing": "KI07",
+      "label": "inner",
+      "file": "data\\PU\\selected_mat\\KI07\\N15_M07_F10_KI07_2.mat",
+      "recording": 2,
+      "windows": 100
+    },
+    {
+      "bearing": "KI16",
+      "label": "inner",
+      "file": "data\\PU\\selected_mat\\KI16\\N15_M07_F10_KI16_1.mat",
+      "recording": 1,
+      "windows": 100
+    },
+    {
+      "bearing": "KI16",
+      "label": "inner",
+      "file": "data\\PU\\selected_mat\\KI16\\N15_M07_F10_KI16_2.mat",
+      "recording": 2,
+      "windows": 100
+    },
+    {
+      "bearing": "KA06",
+      "label": "outer",
+      "file": "data\\PU\\selected_mat\\KA06\\N15_M07_F10_KA06_1.mat",
+      "recording": 1,
+      "windows": 100
+    },
+    {
+      "bearing": "KA06",
+      "label": "outer",
+      "file": "data\\PU\\selected_mat\\KA06\\N15_M07_F10_KA06_2.mat",
+      "recording": 2,
+      "windows": 100
+    },
+    {
+      "bearing": "KA07",
+      "label": "outer",
+      "file": "data\\PU\\selected_mat\\KA07\\N15_M07_F10_KA07_1.mat",
+      "recording": 1,
+      "windows": 100
+    },
+    {
+      "bearing": "KA07",
+      "label": "outer",
+      "file": "data\\PU\\selected_mat\\KA07\\N15_M07_F10_KA07_2.mat",
+      "recording": 2,
+      "windows": 100
+    }
+  ],
+  "completeness": {
+    "mean_abs_error": 0.009561671875417233,
+    "mean_abs_target_delta": 2.322429895401001,
+    "ratio_of_mean_abs_error_to_mean_abs_delta": 0.004117098171263933
+  },
+  "top52_mean_abs_attribution_share": 0.3290817141532898,
+  "top52_mask": {
+    "accuracy": 0.44583332538604736,
+    "prediction_agreement": 0.8691666722297668,
+    "mean_margin_drop": 0.30552661418914795
+  },
+  "random52_mask_mean": {
+    "accuracy": 0.416458323597908,
+    "prediction_agreement": 0.9531249850988388,
+    "mean_margin_drop": 0.06913346741348506,
+    "repeats": 20
+  },
+  "per_bearing": {
+    "K005": {
+      "class": "normal",
+      "windows": 200,
+      "accuracy": 0.0,
+      "top_mask_prediction_agreement": 1.0,
+      "top_attribution_share": 0.35025978088378906
+    },
+    "K006": {
+      "class": "normal",
+      "windows": 200,
+      "accuracy": 1.0,
+      "top_mask_prediction_agreement": 0.8500000238418579,
+      "top_attribution_share": 0.31060197949409485
+    },
+    "KA06": {
+      "class": "outer",
+      "windows": 200,
+      "accuracy": 0.0,
+      "top_mask_prediction_agreement": 0.9100000262260437,
+      "top_attribution_share": 0.339830219745636
+    },
+    "KA07": {
+      "class": "outer",
+      "windows": 200,
+      "accuracy": 0.0,
+      "top_mask_prediction_agreement": 0.9599999785423279,
+      "top_attribution_share": 0.34485766291618347
+    },
+    "KI07": {
+      "class": "inner",
+      "windows": 200,
+      "accuracy": 0.9549999833106995,
+      "top_mask_prediction_agreement": 0.9549999833106995,
+      "top_attribution_share": 0.3496125340461731
+    },
+    "KI16": {
+      "class": "inner",
+      "windows": 200,
+      "accuracy": 0.36500000953674316,
+      "top_mask_prediction_agreement": 0.5400000214576721,
+      "top_attribution_share": 0.27932819724082947
+    }
+  },
+  "per_class": {
+    "normal": {
+      "windows": 400,
+      "accuracy": 0.5,
+      "top_mask_prediction_agreement": 0.925000011920929,
+      "top_attribution_share": 0.33043086528778076
+    },
+    "inner": {
+      "windows": 400,
+      "accuracy": 0.6600000262260437,
+      "top_mask_prediction_agreement": 0.7475000023841858,
+      "top_attribution_share": 0.3144703805446625
+    },
+    "outer": {
+      "windows": 400,
+      "accuracy": 0.0,
+      "top_mask_prediction_agreement": 0.9350000023841858,
+      "top_attribution_share": 0.34234392642974854
+    }
+  },
+  "noise_stability": {
+    "20": {
+      "repeats": 5,
+      "mean_jaccard": 0.505208683013916,
+      "prediction_agreement": 0.9711666703224182,
+      "mean_jaccard_given_unchanged_prediction": 0.5079114079475403,
+      "accuracy": 0.4028333365917206,
+      "per_bearing": {
+        "K005": {
+          "mean_jaccard": 0.590706467628479,
+          "prediction_agreement": 1.0,
+          "accuracy": 0.0
+        },
+        "K006": {
+          "mean_jaccard": 0.5184140801429749,
+          "prediction_agreement": 0.9980000019073486,
+          "accuracy": 0.9980000019073486
+        },
+        "KA06": {
+          "mean_jaccard": 0.43444339632987977,
+          "prediction_agreement": 0.9710000038146973,
+          "accuracy": 0.0
+        },
+        "KA07": {
+          "mean_jaccard": 0.44445815682411194,
+          "prediction_agreement": 0.9730000257492065,
+          "accuracy": 0.0
+        },
+        "KI07": {
+          "mean_jaccard": 0.4815174460411072,
+          "prediction_agreement": 0.9870000123977661,
+          "accuracy": 0.9559999823570251
+        },
+        "KI16": {
+          "mean_jaccard": 0.5617125391960144,
+          "prediction_agreement": 0.8979999899864197,
+          "accuracy": 0.4630000054836273
+        }
+      },
+      "draws": [
+        {
+          "seed": 2026,
+          "mean_jaccard": 0.5036026835441589,
+          "prediction_agreement": 0.9733333587646484,
+          "mean_jaccard_given_unchanged_prediction": 0.5073555111885071,
+          "accuracy": 0.40166667103767395,
+          "per_bearing": {
+            "K005": {
+              "mean_jaccard": 0.5906327366828918,
+              "prediction_agreement": 1.0,
+              "accuracy": 0.0
+            },
+            "K006": {
+              "mean_jaccard": 0.5220415592193604,
+              "prediction_agreement": 0.9950000047683716,
+              "accuracy": 0.9950000047683716
+            },
+            "KA06": {
+              "mean_jaccard": 0.42804813385009766,
+              "prediction_agreement": 0.9800000190734863,
+              "accuracy": 0.0
+            },
+            "KA07": {
+              "mean_jaccard": 0.449432909488678,
+              "prediction_agreement": 0.9700000286102295,
+              "accuracy": 0.0
+            },
+            "KI07": {
+              "mean_jaccard": 0.4724856913089752,
+              "prediction_agreement": 0.9850000143051147,
+              "accuracy": 0.9599999785423279
+            },
+            "KI16": {
+              "mean_jaccard": 0.5589750409126282,
+              "prediction_agreement": 0.9100000262260437,
+              "accuracy": 0.45500001311302185
+            }
+          }
+        },
+        {
+          "seed": 2027,
+          "mean_jaccard": 0.5024817585945129,
+          "prediction_agreement": 0.9683333039283752,
+          "mean_jaccard_given_unchanged_prediction": 0.5044717192649841,
+          "accuracy": 0.4025000035762787,
+          "per_bearing": {
+            "K005": {
+              "mean_jaccard": 0.5918580889701843,
+              "prediction_agreement": 1.0,
+              "accuracy": 0.0
+            },
+            "K006": {
+              "mean_jaccard": 0.5148762464523315,
+              "prediction_agreement": 0.9950000047683716,
+              "accuracy": 0.9950000047683716
+            },
+            "KA06": {
+              "mean_jaccard": 0.42239370942115784,
+              "prediction_agreement": 0.9549999833106995,
+              "accuracy": 0.0
+            },
+            "KA07": {
+              "mean_jaccard": 0.4406857192516327,
+              "prediction_agreement": 0.9700000286102295,
+              "accuracy": 0.0
+            },
+            "KI07": {
+              "mean_jaccard": 0.4854048788547516,
+              "prediction_agreement": 0.9950000047683716,
+              "accuracy": 0.949999988079071
+            },
+            "KI16": {
+              "mean_jaccard": 0.5596719980239868,
+              "prediction_agreement": 0.8949999809265137,
+              "accuracy": 0.4699999988079071
+            }
+          }
+        },
+        {
+          "seed": 2028,
+          "mean_jaccard": 0.5080486536026001,
+          "prediction_agreement": 0.9683333039283752,
+          "mean_jaccard_given_unchanged_prediction": 0.5112209320068359,
+          "accuracy": 0.4033333361148834,
+          "per_bearing": {
+            "K005": {
+              "mean_jaccard": 0.5958257913589478,
+              "prediction_agreement": 1.0,
+              "accuracy": 0.0
+            },
+            "K006": {
+              "mean_jaccard": 0.521473228931427,
+              "prediction_agreement": 1.0,
+              "accuracy": 1.0
+            },
+            "KA06": {
+              "mean_jaccard": 0.442336767911911,
+              "prediction_agreement": 0.9649999737739563,
+              "accuracy": 0.0
+            },
+            "KA07": {
+              "mean_jaccard": 0.4455431401729584,
+              "prediction_agreement": 0.9750000238418579,
+              "accuracy": 0.0
+            },
+            "KI07": {
+              "mean_jaccard": 0.480355829000473,
+              "prediction_agreement": 0.9750000238418579,
+              "accuracy": 0.9599999785423279
+            },
+            "KI16": {
+              "mean_jaccard": 0.5627572536468506,
+              "prediction_agreement": 0.8949999809265137,
+              "accuracy": 0.46000000834465027
+            }
+          }
+        },
+        {
+          "seed": 2029,
+          "mean_jaccard": 0.5070825815200806,
+          "prediction_agreement": 0.9741666913032532,
+          "mean_jaccard_given_unchanged_prediction": 0.5089690089225769,
+          "accuracy": 0.40416666865348816,
+          "per_bearing": {
+            "K005": {
+              "mean_jaccard": 0.5869551301002502,
+              "prediction_agreement": 1.0,
+              "accuracy": 0.0
+            },
+            "K006": {
+              "mean_jaccard": 0.513698160648346,
+              "prediction_agreement": 1.0,
+              "accuracy": 1.0
+            },
+            "KA06": {
+              "mean_jaccard": 0.44979146122932434,
+              "prediction_agreement": 0.9800000190734863,
+              "accuracy": 0.0
+            },
+            "KA07": {
+              "mean_jaccard": 0.44009360671043396,
+              "prediction_agreement": 0.9800000190734863,
+              "accuracy": 0.0
+            },
+            "KI07": {
+              "mean_jaccard": 0.4885680079460144,
+              "prediction_agreement": 0.9900000095367432,
+              "accuracy": 0.9549999833106995
+            },
+            "KI16": {
+              "mean_jaccard": 0.5633891224861145,
+              "prediction_agreement": 0.8949999809265137,
+              "accuracy": 0.4699999988079071
+            }
+          }
+        },
+        {
+          "seed": 2030,
+          "mean_jaccard": 0.5048277378082275,
+          "prediction_agreement": 0.971666693687439,
+          "mean_jaccard_given_unchanged_prediction": 0.5075398683547974,
+          "accuracy": 0.4025000035762787,
+          "per_bearing": {
+            "K005": {
+              "mean_jaccard": 0.5882605910301208,
+              "prediction_agreement": 1.0,
+              "accuracy": 0.0
+            },
+            "K006": {
+              "mean_jaccard": 0.5199812054634094,
+              "prediction_agreement": 1.0,
+              "accuracy": 1.0
+            },
+            "KA06": {
+              "mean_jaccard": 0.42964690923690796,
+              "prediction_agreement": 0.9750000238418579,
+              "accuracy": 0.0
+            },
+            "KA07": {
+              "mean_jaccard": 0.4465354084968567,
+              "prediction_agreement": 0.9700000286102295,
+              "accuracy": 0.0
+            },
+            "KI07": {
+              "mean_jaccard": 0.48077282309532166,
+              "prediction_agreement": 0.9900000095367432,
+              "accuracy": 0.9549999833106995
+            },
+            "KI16": {
+              "mean_jaccard": 0.5637692809104919,
+              "prediction_agreement": 0.8949999809265137,
+              "accuracy": 0.46000000834465027
+            }
+          }
+        }
+      ]
+    },
+    "-4": {
+      "repeats": 5,
+      "mean_jaccard": 0.08006856888532639,
+      "prediction_agreement": 0.20066666901111602,
+      "mean_jaccard_given_unchanged_prediction": 0.11382023841142655,
+      "accuracy": 0.335833340883255,
+      "per_bearing": {
+        "K005": {
+          "mean_jaccard": 0.07718276679515838,
+          "prediction_agreement": 0.0,
+          "accuracy": 1.0
+        },
+        "K006": {
+          "mean_jaccard": 0.11747710257768632,
+          "prediction_agreement": 1.0,
+          "accuracy": 1.0
+        },
+        "KA06": {
+          "mean_jaccard": 0.07613729983568192,
+          "prediction_agreement": 0.10999999940395355,
+          "accuracy": 0.0
+        },
+        "KA07": {
+          "mean_jaccard": 0.07470149546861649,
+          "prediction_agreement": 0.04500000178813934,
+          "accuracy": 0.0
+        },
+        "KI07": {
+          "mean_jaccard": 0.07186738550662994,
+          "prediction_agreement": 0.04600000157952309,
+          "accuracy": 0.0009999999776482583
+        },
+        "KI16": {
+          "mean_jaccard": 0.06304539814591407,
+          "prediction_agreement": 0.0029999999329447745,
+          "accuracy": 0.013999999687075614
+        }
+      },
+      "draws": [
+        {
+          "seed": 2026,
+          "mean_jaccard": 0.07998643070459366,
+          "prediction_agreement": 0.20083333551883698,
+          "mean_jaccard_given_unchanged_prediction": 0.1132136732339859,
+          "accuracy": 0.33666667342185974,
+          "per_bearing": {
+            "K005": {
+              "mean_jaccard": 0.07693063467741013,
+              "prediction_agreement": 0.0,
+              "accuracy": 1.0
+            },
+            "K006": {
+              "mean_jaccard": 0.11657785624265671,
+              "prediction_agreement": 1.0,
+              "accuracy": 1.0
+            },
+            "KA06": {
+              "mean_jaccard": 0.07714121043682098,
+              "prediction_agreement": 0.10999999940395355,
+              "accuracy": 0.0
+            },
+            "KA07": {
+              "mean_jaccard": 0.07601840049028397,
+              "prediction_agreement": 0.04500000178813934,
+              "accuracy": 0.0
+            },
+            "KI07": {
+              "mean_jaccard": 0.07019621133804321,
+              "prediction_agreement": 0.04500000178813934,
+              "accuracy": 0.0
+            },
+            "KI16": {
+              "mean_jaccard": 0.06305433064699173,
+              "prediction_agreement": 0.004999999888241291,
+              "accuracy": 0.019999999552965164
+            }
+          }
+        },
+        {
+          "seed": 2027,
+          "mean_jaccard": 0.07965821772813797,
+          "prediction_agreement": 0.20000000298023224,
+          "mean_jaccard_given_unchanged_prediction": 0.1115596741437912,
+          "accuracy": 0.33500000834465027,
+          "per_bearing": {
+            "K005": {
+              "mean_jaccard": 0.07740811258554459,
+              "prediction_agreement": 0.0,
+              "accuracy": 1.0
+            },
+            "K006": {
+              "mean_jaccard": 0.11536465585231781,
+              "prediction_agreement": 1.0,
+              "accuracy": 1.0
+            },
+            "KA06": {
+              "mean_jaccard": 0.07665637135505676,
+              "prediction_agreement": 0.10999999940395355,
+              "accuracy": 0.0
+            },
+            "KA07": {
+              "mean_jaccard": 0.07204172760248184,
+              "prediction_agreement": 0.04500000178813934,
+              "accuracy": 0.0
+            },
+            "KI07": {
+              "mean_jaccard": 0.07214447110891342,
+              "prediction_agreement": 0.04500000178813934,
+              "accuracy": 0.0
+            },
+            "KI16": {
+              "mean_jaccard": 0.06433402001857758,
+              "prediction_agreement": 0.0,
+              "accuracy": 0.009999999776482582
+            }
+          }
+        },
+        {
+          "seed": 2028,
+          "mean_jaccard": 0.08090530335903168,
+          "prediction_agreement": 0.2016666680574417,
+          "mean_jaccard_given_unchanged_prediction": 0.11556406319141388,
+          "accuracy": 0.335833340883255,
+          "per_bearing": {
+            "K005": {
+              "mean_jaccard": 0.07459455728530884,
+              "prediction_agreement": 0.0,
+              "accuracy": 1.0
+            },
+            "K006": {
+              "mean_jaccard": 0.11952733993530273,
+              "prediction_agreement": 1.0,
+              "accuracy": 1.0
+            },
+            "KA06": {
+              "mean_jaccard": 0.07661403715610504,
+              "prediction_agreement": 0.10999999940395355,
+              "accuracy": 0.0
+            },
+            "KA07": {
+              "mean_jaccard": 0.07706859707832336,
+              "prediction_agreement": 0.04500000178813934,
+              "accuracy": 0.0
+            },
+            "KI07": {
+              "mean_jaccard": 0.07324022799730301,
+              "prediction_agreement": 0.04500000178813934,
+              "accuracy": 0.0
+            },
+            "KI16": {
+              "mean_jaccard": 0.06438709050416946,
+              "prediction_agreement": 0.009999999776482582,
+              "accuracy": 0.014999999664723873
+            }
+          }
+        },
+        {
+          "seed": 2029,
+          "mean_jaccard": 0.07966973632574081,
+          "prediction_agreement": 0.20083333551883698,
+          "mean_jaccard_given_unchanged_prediction": 0.11369678378105164,
+          "accuracy": 0.3375000059604645,
+          "per_bearing": {
+            "K005": {
+              "mean_jaccard": 0.07744817435741425,
+              "prediction_agreement": 0.0,
+              "accuracy": 1.0
+            },
+            "K006": {
+              "mean_jaccard": 0.1167416200041771,
+              "prediction_agreement": 1.0,
+              "accuracy": 1.0
+            },
+            "KA06": {
+              "mean_jaccard": 0.07685063034296036,
+              "prediction_agreement": 0.10999999940395355,
+              "accuracy": 0.0
+            },
+            "KA07": {
+              "mean_jaccard": 0.07382749766111374,
+              "prediction_agreement": 0.04500000178813934,
+              "accuracy": 0.0
+            },
+            "KI07": {
+              "mean_jaccard": 0.07242545485496521,
+              "prediction_agreement": 0.05000000074505806,
+              "accuracy": 0.004999999888241291
+            },
+            "KI16": {
+              "mean_jaccard": 0.060725096613168716,
+              "prediction_agreement": 0.0,
+              "accuracy": 0.019999999552965164
+            }
+          }
+        },
+        {
+          "seed": 2030,
+          "mean_jaccard": 0.08012315630912781,
+          "prediction_agreement": 0.20000000298023224,
+          "mean_jaccard_given_unchanged_prediction": 0.1150669977068901,
+          "accuracy": 0.33416667580604553,
+          "per_bearing": {
+            "K005": {
+              "mean_jaccard": 0.07953235507011414,
+              "prediction_agreement": 0.0,
+              "accuracy": 1.0
+            },
+            "K006": {
+              "mean_jaccard": 0.1191740408539772,
+              "prediction_agreement": 1.0,
+              "accuracy": 1.0
+            },
+            "KA06": {
+              "mean_jaccard": 0.07342424988746643,
+              "prediction_agreement": 0.10999999940395355,
+              "accuracy": 0.0
+            },
+            "KA07": {
+              "mean_jaccard": 0.07455125451087952,
+              "prediction_agreement": 0.04500000178813934,
+              "accuracy": 0.0
+            },
+            "KI07": {
+              "mean_jaccard": 0.07133056223392487,
+              "prediction_agreement": 0.04500000178813934,
+              "accuracy": 0.0
+            },
+            "KI16": {
+              "mean_jaccard": 0.0627264529466629,
+              "prediction_agreement": 0.0,
+              "accuracy": 0.004999999888241291
+            }
+          }
+        }
+      ]
+    }
+  }
+}

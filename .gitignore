@@ -1,0 +1,26 @@
+# Python environments and generated caches
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ipynb_checkpoints/
+
+# Original datasets, downloads, and local feature caches
+/data/
+**/cwru_raw/
+**/cache/
+*.mat
+*.rar
+*.zip
+*.npy
+
+# Local logs, private manuscript and editor metadata
+*.log
+*.pdf
+paper_supplement_recovered/
+.DS_Store
+Thumbs.db
+.env
+.env.*

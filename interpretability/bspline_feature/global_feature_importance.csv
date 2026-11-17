@@ -1,0 +1,14 @@
+﻿feature,mean_abs_ig_min,mean_signed_ig_min,median_rank,top3_bearing_count,n_bearings
+speed_hz,75.96341,32.591026,2.0,10,15
+load_kN,67.254364,35.756878,2.0,8,15
+horizontal_peak,38.583733,17.89783,4.0,7,15
+elapsed_minutes,38.47025,-18.709074,4.0,7,15
+vertical_rms,30.701038,8.641998,5.0,3,15
+vertical_peak,28.433079,11.424682,5.0,3,15
+horizontal_skewness,23.195368,-10.994092,6.0,0,15
+horizontal_rms,22.908495,5.385799,6.0,1,15
+vertical_kurtosis,22.770388,13.517638,10.0,3,15
+vertical_skewness,22.059605,-7.8273215,9.0,3,15
+horizontal_variance,16.400734,4.68494,9.0,0,15
+vertical_variance,13.547089,9.413423,8.0,0,15
+horizontal_kurtosis,5.184544,1.6540004,12.0,0,15

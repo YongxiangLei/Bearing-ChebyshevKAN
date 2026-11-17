@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "test_bearings": 15,
+  "seed": 42,
+  "predictions": 9216,
+  "protocol": "same outer and inner bearing splits as prior seed42; train-bearing equal-weight scaler and target transform; loaded model and predictions independently",
+  "max_scaler_difference": 6.758682502550073e-11,
+  "max_target_transform_difference": 0.0,
+  "max_checkpoint_prediction_difference_min": 5.9570312487267074e-05,
+  "max_metric_difference_min": 0.0,
+  "caveat": "Reconstruction and split audit do not prove physical truth, generalization to new operating conditions, or prevent exploratory test-use bias."
+}

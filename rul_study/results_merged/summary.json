@@ -1,0 +1,207 @@
+{
+  "complete_15_folds": true,
+  "folds_completed": 45,
+  "split_seed": 42,
+  "training_seeds": [
+    42,
+    43,
+    44
+  ],
+  "protocol": "LOBO outer test. One non-test bearing per condition held out for validation; all remaining bearings train; validation and test bearings excluded from all fitted scaling, model selection and training. Metrics macro-averaged over test bearings.",
+  "candidate_budget": "two alpha values per ridge; two widths per neural model; same optimizer and epoch budget per neural candidate; identical fixed validation splits for all training seeds",
+  "model_note": "KAN is adaptive gated Chebyshev polynomial layer from paper supplement (degree 3), not sparse B-spline KAN; no explicit sparsity regularization. Widths 8/16 vs MLP widths 64/128 give roughly comparable parameter counts.",
+  "target": "minutes to last recorded observation = number of future records at 1-minute interval; last observed timestamp is a proxy for endpoint, not known exact failure time.",
+  "limitations": [
+    "15 bearings total, only one outer test bearing per fold and one fixed validation split per fold; seeds are not new bearings.",
+    "Present-record features plus elapsed time, speed and load only; no future lifetime, future record or full-test normalization in inputs.",
+    "No independent unseen-condition validation: each fold has training bearings from all three conditions."
+  ],
+  "input_columns": [
+    "horizontal_rms",
+    "horizontal_peak",
+    "horizontal_variance",
+    "horizontal_kurtosis",
+    "horizontal_skewness",
+    "vertical_rms",
+    "vertical_peak",
+    "vertical_variance",
+    "vertical_kurtosis",
+    "vertical_skewness",
+    "elapsed_minutes",
+    "speed_hz",
+    "load_kN"
+  ],
+  "age_baseline_columns": [
+    "elapsed_minutes",
+    "speed_hz",
+    "load_kN"
+  ],
+  "epochs_max": 60,
+  "patience": 8,
+  "versions": {
+    "python": "3.12.3 | packaged by conda-forge | (main, Apr 15 2024, 18:20:11) [MSC v.1938 64 bit (AMD64)]",
+    "numpy": "1.26.4",
+    "pandas": "2.2.2",
+    "sklearn": "1.4.2",
+    "torch": "2.15.0+cpu"
+  },
+  "macro_results": {
+    "age_ridge": {
+      "mae_min": 304.37859982217356,
+      "rmse_min": 343.04297258776785,
+      "mean_overestimate_min": 169.67853958079357,
+      "overestimate_rate": 0.5123434332523235,
+      "late_last_20pct_macro": {
+        "mae_min": 306.0663029061928,
+        "rmse_min": 310.8664459641611,
+        "mean_overestimate_min": 302.26047997648595,
+        "overestimate_rate": 0.696969696969697
+      },
+      "mean_mae_by_training_seed": {
+        "42": 304.3785998221735,
+        "43": 304.3785998221735,
+        "44": 304.3785998221735
+      },
+      "mean_mae_by_condition": {
+        "35Hz12kN": 60.77926007938984,
+        "37.5Hz11kN": 225.0416898920884,
+        "40Hz10kN": 627.3148494950423
+      },
+      "mean_mae_by_test_bearing": {
+        "Bearing1_1": 61.0,
+        "Bearing1_2": 80.0,
+        "Bearing1_3": 78.5,
+        "Bearing1_4": 60.5,
+        "Bearing1_5": 23.89630039694923,
+        "Bearing2_1": 154.5247488029688,
+        "Bearing2_2": 294.2473882153209,
+        "Bearing2_3": 149.98050049311735,
+        "Bearing2_4": 272.848314036284,
+        "Bearing2_5": 253.60749791275092,
+        "Bearing3_1": 811.5140766740196,
+        "Bearing3_2": 896.6787075886215,
+        "Bearing3_3": 401.1526498376988,
+        "Bearing3_4": 402.0086719278154,
+        "Bearing3_5": 625.2201414470568
+      }
+    },
+    "features_ridge": {
+      "mae_min": 333.417542081233,
+      "rmse_min": 397.8491381120705,
+      "mean_overestimate_min": 209.63365673301365,
+      "overestimate_rate": 0.5408687058564127,
+      "late_last_20pct_macro": {
+        "mae_min": 293.8748230015806,
+        "rmse_min": 335.41184486293304,
+        "mean_overestimate_min": 286.38578850716567,
+        "overestimate_rate": 0.577005239469302
+      },
+      "mean_mae_by_training_seed": {
+        "42": 333.41754208123297,
+        "43": 333.41754208123297,
+        "44": 333.41754208123297
+      },
+      "mean_mae_by_condition": {
+        "35Hz12kN": 54.60426401024241,
+        "37.5Hz11kN": 307.1816994554323,
+        "40Hz10kN": 638.4666627780243
+      },
+      "mean_mae_by_test_bearing": {
+        "Bearing1_1": 44.449120590241535,
+        "Bearing1_2": 67.35963310146992,
+        "Bearing1_3": 91.68781756057518,
+        "Bearing1_4": 50.73144589199063,
+        "Bearing1_5": 18.793302906934766,
+        "Bearing2_1": 300.35546122297984,
+        "Bearing2_2": 375.2102112007913,
+        "Bearing2_3": 100.65895719753415,
+        "Bearing2_4": 422.11324507028957,
+        "Bearing2_5": 337.5706225855667,
+        "Bearing3_1": 751.6589398696466,
+        "Bearing3_2": 864.2043937774173,
+        "Bearing3_3": 663.5636058985607,
+        "Bearing3_4": 334.6260094906345,
+        "Bearing3_5": 578.2803648538625
+      }
+    },
+    "mlp": {
+      "mae_min": 305.5824133650853,
+      "rmse_min": 366.58074043493656,
+      "mean_overestimate_min": 174.7175358997106,
+      "overestimate_rate": 0.5378660855955494,
+      "late_last_20pct_macro": {
+        "mae_min": 237.60149800716215,
+        "rmse_min": 286.75313683458,
+        "mean_overestimate_min": 230.77644463086116,
+        "overestimate_rate": 0.6689185803976928
+      },
+      "mean_mae_by_training_seed": {
+        "42": 299.92802314701845,
+        "43": 303.10335610644546,
+        "44": 313.71586084179233
+      },
+      "mean_mae_by_condition": {
+        "35Hz12kN": 64.24282481765584,
+        "37.5Hz11kN": 196.70558963305467,
+        "40Hz10kN": 655.7988256445458
+      },
+      "mean_mae_by_test_bearing": {
+        "Bearing1_1": 56.47547486674818,
+        "Bearing1_2": 50.416113622440314,
+        "Bearing1_3": 81.2418941063217,
+        "Bearing1_4": 65.64475863097144,
+        "Bearing1_5": 67.43588286179762,
+        "Bearing2_1": 255.59215353495074,
+        "Bearing2_2": 224.03403104857134,
+        "Bearing2_3": 100.55341283286491,
+        "Bearing2_4": 315.3389967661055,
+        "Bearing2_5": 88.00935398278101,
+        "Bearing3_1": 802.1009321540931,
+        "Bearing3_2": 835.8460123131417,
+        "Bearing3_3": 1108.8091207471712,
+        "Bearing3_4": 401.97947565630585,
+        "Bearing3_5": 130.25858735201652
+      }
+    },
+    "kan": {
+      "mae_min": 287.308592932646,
+      "rmse_min": 347.62981287190945,
+      "mean_overestimate_min": 135.78132014317305,
+      "overestimate_rate": 0.5967093610308892,
+      "late_last_20pct_macro": {
+        "mae_min": 163.24079878197244,
+        "rmse_min": 186.8816825381747,
+        "mean_overestimate_min": 157.05233169326922,
+        "overestimate_rate": 0.669472161025157
+      },
+      "mean_mae_by_training_seed": {
+        "42": 282.5905425550696,
+        "43": 293.314071400602,
+        "44": 286.0211648422664
+      },
+      "mean_mae_by_condition": {
+        "35Hz12kN": 108.74371477703625,
+        "37.5Hz11kN": 154.1996109451418,
+        "40Hz10kN": 598.9824530757598
+      },
+      "mean_mae_by_test_bearing": {
+        "Bearing1_1": 79.03465622485815,
+        "Bearing1_2": 69.33028306033053,
+        "Bearing1_3": 189.42137088051325,
+        "Bearing1_4": 141.82267773737672,
+        "Bearing1_5": 64.10958598210262,
+        "Bearing2_1": 166.0450729401194,
+        "Bearing2_2": 94.86017534402093,
+        "Bearing2_3": 145.85465483340417,
+        "Bearing2_4": 200.47568996368895,
+        "Bearing2_5": 163.76246164447556,
+        "Bearing3_1": 842.600294701847,
+        "Bearing3_2": 879.378509088459,
+        "Bearing3_3": 637.6860639189989,
+        "Bearing3_4": 388.88608404480584,
+        "Bearing3_5": 246.36131362468873
+      }
+    }
+  },
+  "aggregation_note": "Mean of per-bearing metrics, then mean over training seeds; seeds share the same test bearings and validation splits, and are not independent bearings."
+}

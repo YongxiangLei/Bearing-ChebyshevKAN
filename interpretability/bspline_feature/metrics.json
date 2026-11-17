@@ -1,0 +1,742 @@
+{
+  "protocol": "15 fold-specific BSplineKAN models, seed42, test bearings only, each model has train-only feature mean baseline. 64 midpoint IG on actual nonnegative clipped RUL output; equal-weight average of per-bearing mean absolute IG.",
+  "steps": 64,
+  "seed": 42,
+  "n_bearings": 15,
+  "n_records": 9216,
+  "max_reloaded_prediction_discrepancy_min": 5.9570312487267074e-05,
+  "bearing_equal_completeness_mean_abs_error_min": 0.19452480407780967,
+  "bearing_equal_mean_abs_output_difference_from_baseline_min": 212.7907725016276,
+  "ratio_of_these_equal_bearing_means": 0.0009141599599969537,
+  "feature_rankings": [
+    {
+      "feature": "speed_hz",
+      "mean_abs_ig_min": 75.96340942382812,
+      "mean_signed_ig_min": 32.591026306152344,
+      "median_rank": 2.0,
+      "top3_bearing_count": 10,
+      "n_bearings": 15
+    },
+    {
+      "feature": "load_kN",
+      "mean_abs_ig_min": 67.25436401367188,
+      "mean_signed_ig_min": 35.75687789916992,
+      "median_rank": 2.0,
+      "top3_bearing_count": 8,
+      "n_bearings": 15
+    },
+    {
+      "feature": "horizontal_peak",
+      "mean_abs_ig_min": 38.58373260498047,
+      "mean_signed_ig_min": 17.897829055786133,
+      "median_rank": 4.0,
+      "top3_bearing_count": 7,
+      "n_bearings": 15
+    },
+    {
+      "feature": "elapsed_minutes",
+      "mean_abs_ig_min": 38.47024917602539,
+      "mean_signed_ig_min": -18.709074020385742,
+      "median_rank": 4.0,
+      "top3_bearing_count": 7,
+      "n_bearings": 15
+    },
+    {
+      "feature": "vertical_rms",
+      "mean_abs_ig_min": 30.701038360595703,
+      "mean_signed_ig_min": 8.641998291015625,
+      "median_rank": 5.0,
+      "top3_bearing_count": 3,
+      "n_bearings": 15
+    },
+    {
+      "feature": "vertical_peak",
+      "mean_abs_ig_min": 28.43307876586914,
+      "mean_signed_ig_min": 11.424681663513184,
+      "median_rank": 5.0,
+      "top3_bearing_count": 3,
+      "n_bearings": 15
+    },
+    {
+      "feature": "horizontal_skewness",
+      "mean_abs_ig_min": 23.19536781311035,
+      "mean_signed_ig_min": -10.994091987609863,
+      "median_rank": 6.0,
+      "top3_bearing_count": 0,
+      "n_bearings": 15
+    },
+    {
+      "feature": "horizontal_rms",
+      "mean_abs_ig_min": 22.90849494934082,
+      "mean_signed_ig_min": 5.385798931121826,
+      "median_rank": 6.0,
+      "top3_bearing_count": 1,
+      "n_bearings": 15
+    },
+    {
+      "feature": "vertical_kurtosis",
+      "mean_abs_ig_min": 22.770387649536133,
+      "mean_signed_ig_min": 13.517638206481934,
+      "median_rank": 10.0,
+      "top3_bearing_count": 3,
+      "n_bearings": 15
+    },
+    {
+      "feature": "vertical_skewness",
+      "mean_abs_ig_min": 22.05960464477539,
+      "mean_signed_ig_min": -7.827321529388428,
+      "median_rank": 9.0,
+      "top3_bearing_count": 3,
+      "n_bearings": 15
+    },
+    {
+      "feature": "horizontal_variance",
+      "mean_abs_ig_min": 16.400733947753906,
+      "mean_signed_ig_min": 4.684939861297607,
+      "median_rank": 9.0,
+      "top3_bearing_count": 0,
+      "n_bearings": 15
+    },
+    {
+      "feature": "vertical_variance",
+      "mean_abs_ig_min": 13.547088623046875,
+      "mean_signed_ig_min": 9.413422584533691,
+      "median_rank": 8.0,
+      "top3_bearing_count": 0,
+      "n_bearings": 15
+    },
+    {
+      "feature": "horizontal_kurtosis",
+      "mean_abs_ig_min": 5.184544086456299,
+      "mean_signed_ig_min": 1.6540004014968872,
+      "median_rank": 12.0,
+      "top3_bearing_count": 0,
+      "n_bearings": 15
+    }
+  ],
+  "per_bearing": [
+    {
+      "bearing": "Bearing1_1",
+      "records": 123,
+      "training_bearings": [
+        "Bearing1_3",
+        "Bearing1_4",
+        "Bearing1_5",
+        "Bearing2_1",
+        "Bearing2_2",
+        "Bearing2_3",
+        "Bearing2_5",
+        "Bearing3_1",
+        "Bearing3_2",
+        "Bearing3_3",
+        "Bearing3_5"
+      ],
+      "validation_bearings": [
+        "Bearing1_2",
+        "Bearing2_4",
+        "Bearing3_4"
+      ],
+      "prediction_positive_fraction": 0.6504064798355103,
+      "completeness_mean_abs_error_min": 0.39245301485061646,
+      "mean_abs_prediction_minus_baseline_min": 153.00209045410156,
+      "ranked_features": [
+        "load_kN",
+        "speed_hz",
+        "elapsed_minutes",
+        "horizontal_rms",
+        "horizontal_variance",
+        "horizontal_peak",
+        "vertical_rms",
+        "vertical_variance",
+        "vertical_kurtosis",
+        "horizontal_skewness",
+        "vertical_peak",
+        "vertical_skewness",
+        "horizontal_kurtosis"
+      ],
+      "mae_min": 44.760962881693025
+    },
+    {
+      "bearing": "Bearing1_2",
+      "records": 161,
+      "training_bearings": [
+        "Bearing1_1",
+        "Bearing1_3",
+        "Bearing1_5",
+        "Bearing2_1",
+        "Bearing2_2",
+        "Bearing2_3",
+        "Bearing2_5",
+        "Bearing3_1",
+        "Bearing3_2",
+        "Bearing3_4",
+        "Bearing3_5"
+      ],
+      "validation_bearings": [
+        "Bearing1_4",
+        "Bearing2_4",
+        "Bearing3_3"
+      ],
+      "prediction_positive_fraction": 0.45962733030319214,
+      "completeness_mean_abs_error_min": 0.6416769027709961,
+      "mean_abs_prediction_minus_baseline_min": 129.90447998046875,
+      "ranked_features": [
+        "speed_hz",
+        "load_kN",
+        "horizontal_peak",
+        "elapsed_minutes",
+        "horizontal_rms",
+        "vertical_rms",
+        "horizontal_skewness",
+        "vertical_variance",
+        "vertical_peak",
+        "vertical_skewness",
+        "horizontal_variance",
+        "horizontal_kurtosis",
+        "vertical_kurtosis"
+      ],
+      "mae_min": 47.33384145416829
+    },
+    {
+      "bearing": "Bearing1_3",
+      "records": 158,
+      "training_bearings": [
+        "Bearing1_1",
+        "Bearing1_2",
+        "Bearing1_5",
+        "Bearing2_2",
+        "Bearing2_3",
+        "Bearing2_4",
+        "Bearing2_5",
+        "Bearing3_1",
+        "Bearing3_2",
+        "Bearing3_3",
+        "Bearing3_4"
+      ],
+      "validation_bearings": [
+        "Bearing1_4",
+        "Bearing2_1",
+        "Bearing3_5"
+      ],
+      "prediction_positive_fraction": 0.702531635761261,
+      "completeness_mean_abs_error_min": 0.45441773533821106,
+      "mean_abs_prediction_minus_baseline_min": 159.63973999023438,
+      "ranked_features": [
+        "vertical_peak",
+        "vertical_skewness",
+        "speed_hz",
+        "vertical_rms",
+        "horizontal_skewness",
+        "horizontal_peak",
+        "load_kN",
+        "vertical_variance",
+        "horizontal_variance",
+        "elapsed_minutes",
+        "vertical_kurtosis",
+        "horizontal_rms",
+        "horizontal_kurtosis"
+      ],
+      "mae_min": 114.46267970604232
+    },
+    {
+      "bearing": "Bearing1_4",
+      "records": 122,
+      "training_bearings": [
+        "Bearing1_1",
+        "Bearing1_2",
+        "Bearing1_3",
+        "Bearing2_1",
+        "Bearing2_2",
+        "Bearing2_4",
+        "Bearing2_5",
+        "Bearing3_1",
+        "Bearing3_2",
+        "Bearing3_3",
+        "Bearing3_5"
+      ],
+      "validation_bearings": [
+        "Bearing1_5",
+        "Bearing2_3",
+        "Bearing3_4"
+      ],
+      "prediction_positive_fraction": 1.0,
+      "completeness_mean_abs_error_min": 0.6829807162284851,
+      "mean_abs_prediction_minus_baseline_min": 26.414112091064453,
+      "ranked_features": [
+        "speed_hz",
+        "elapsed_minutes",
+        "horizontal_peak",
+        "vertical_peak",
+        "vertical_rms",
+        "vertical_variance",
+        "horizontal_rms",
+        "vertical_skewness",
+        "load_kN",
+        "horizontal_skewness",
+        "vertical_kurtosis",
+        "horizontal_kurtosis",
+        "horizontal_variance"
+      ],
+      "mae_min": 89.56786008741035
+    },
+    {
+      "bearing": "Bearing1_5",
+      "records": 52,
+      "training_bearings": [
+        "Bearing1_1",
+        "Bearing1_2",
+        "Bearing1_4",
+        "Bearing2_1",
+        "Bearing2_2",
+        "Bearing2_3",
+        "Bearing2_4",
+        "Bearing3_1",
+        "Bearing3_3",
+        "Bearing3_4",
+        "Bearing3_5"
+      ],
+      "validation_bearings": [
+        "Bearing1_3",
+        "Bearing2_5",
+        "Bearing3_2"
+      ],
+      "prediction_positive_fraction": 0.942307710647583,
+      "completeness_mean_abs_error_min": 0.02608671598136425,
+      "mean_abs_prediction_minus_baseline_min": 88.97911834716797,
+      "ranked_features": [
+        "elapsed_minutes",
+        "load_kN",
+        "speed_hz",
+        "vertical_peak",
+        "horizontal_skewness",
+        "horizontal_rms",
+        "vertical_rms",
+        "horizontal_variance",
+        "horizontal_peak",
+        "vertical_skewness",
+        "vertical_variance",
+        "vertical_kurtosis",
+        "horizontal_kurtosis"
+      ],
+      "mae_min": 92.08826739971454
+    },
+    {
+      "bearing": "Bearing2_1",
+      "records": 491,
+      "training_bearings": [
+        "Bearing1_2",
+        "Bearing1_3",
+        "Bearing1_4",
+        "Bearing1_5",
+        "Bearing2_2",
+        "Bearing2_3",
+        "Bearing2_5",
+        "Bearing3_1",
+        "Bearing3_2",
+        "Bearing3_4",
+        "Bearing3_5"
+      ],
+      "validation_bearings": [
+        "Bearing1_1",
+        "Bearing2_4",
+        "Bearing3_3"
+      ],
+      "prediction_positive_fraction": 1.0,
+      "completeness_mean_abs_error_min": 0.0003718912194017321,
+      "mean_abs_prediction_minus_baseline_min": 31.475894927978516,
+      "ranked_features": [
+        "horizontal_peak",
+        "vertical_peak",
+        "vertical_kurtosis",
+        "horizontal_rms",
+        "vertical_rms",
+        "horizontal_skewness",
+        "elapsed_minutes",
+        "vertical_variance",
+        "horizontal_variance",
+        "horizontal_kurtosis",
+        "vertical_skewness",
+        "load_kN",
+        "speed_hz"
+      ],
+      "mae_min": 131.9706874622104
+    },
+    {
+      "bearing": "Bearing2_2",
+      "records": 161,
+      "training_bearings": [
+        "Bearing1_2",
+        "Bearing1_3",
+        "Bearing1_4",
+        "Bearing1_5",
+        "Bearing2_1",
+        "Bearing2_4",
+        "Bearing2_5",
+        "Bearing3_1",
+        "Bearing3_2",
+        "Bearing3_4",
+        "Bearing3_5"
+      ],
+      "validation_bearings": [
+        "Bearing1_1",
+        "Bearing2_3",
+        "Bearing3_3"
+      ],
+      "prediction_positive_fraction": 0.7267080545425415,
+      "completeness_mean_abs_error_min": 0.2668699324131012,
+      "mean_abs_prediction_minus_baseline_min": 155.4827117919922,
+      "ranked_features": [
+        "horizontal_peak",
+        "vertical_peak",
+        "vertical_rms",
+        "horizontal_rms",
+        "horizontal_skewness",
+        "elapsed_minutes",
+        "horizontal_variance",
+        "vertical_kurtosis",
+        "vertical_variance",
+        "vertical_skewness",
+        "horizontal_kurtosis",
+        "speed_hz",
+        "load_kN"
+      ],
+      "mae_min": 100.72040145589698
+    },
+    {
+      "bearing": "Bearing2_3",
+      "records": 533,
+      "training_bearings": [
+        "Bearing1_2",
+        "Bearing1_3",
+        "Bearing1_4",
+        "Bearing1_5",
+        "Bearing2_1",
+        "Bearing2_4",
+        "Bearing2_5",
+        "Bearing3_1",
+        "Bearing3_2",
+        "Bearing3_3",
+        "Bearing3_4"
+      ],
+      "validation_bearings": [
+        "Bearing1_1",
+        "Bearing2_2",
+        "Bearing3_5"
+      ],
+      "prediction_positive_fraction": 0.9493433237075806,
+      "completeness_mean_abs_error_min": 0.03574233129620552,
+      "mean_abs_prediction_minus_baseline_min": 77.7077407836914,
+      "ranked_features": [
+        "vertical_skewness",
+        "horizontal_peak",
+        "horizontal_rms",
+        "horizontal_skewness",
+        "vertical_peak",
+        "vertical_rms",
+        "vertical_kurtosis",
+        "vertical_variance",
+        "horizontal_variance",
+        "elapsed_minutes",
+        "horizontal_kurtosis",
+        "speed_hz",
+        "load_kN"
+      ],
+      "mae_min": 155.21135226423252
+    },
+    {
+      "bearing": "Bearing2_4",
+      "records": 42,
+      "training_bearings": [
+        "Bearing1_1",
+        "Bearing1_2",
+        "Bearing1_3",
+        "Bearing1_5",
+        "Bearing2_1",
+        "Bearing2_2",
+        "Bearing2_3",
+        "Bearing3_1",
+        "Bearing3_2",
+        "Bearing3_3",
+        "Bearing3_5"
+      ],
+      "validation_bearings": [
+        "Bearing1_4",
+        "Bearing2_5",
+        "Bearing3_4"
+      ],
+      "prediction_positive_fraction": 0.8571428656578064,
+      "completeness_mean_abs_error_min": 0.22237832844257355,
+      "mean_abs_prediction_minus_baseline_min": 159.22459411621094,
+      "ranked_features": [
+        "vertical_kurtosis",
+        "elapsed_minutes",
+        "horizontal_peak",
+        "horizontal_rms",
+        "horizontal_variance",
+        "vertical_skewness",
+        "vertical_rms",
+        "vertical_peak",
+        "horizontal_skewness",
+        "horizontal_kurtosis",
+        "vertical_variance",
+        "load_kN",
+        "speed_hz"
+      ],
+      "mae_min": 225.93269820440383
+    },
+    {
+      "bearing": "Bearing2_5",
+      "records": 339,
+      "training_bearings": [
+        "Bearing1_1",
+        "Bearing1_3",
+        "Bearing1_4",
+        "Bearing1_5",
+        "Bearing2_1",
+        "Bearing2_2",
+        "Bearing2_3",
+        "Bearing3_1",
+        "Bearing3_2",
+        "Bearing3_3",
+        "Bearing3_4"
+      ],
+      "validation_bearings": [
+        "Bearing1_2",
+        "Bearing2_4",
+        "Bearing3_5"
+      ],
+      "prediction_positive_fraction": 0.98525071144104,
+      "completeness_mean_abs_error_min": 0.056913938373327255,
+      "mean_abs_prediction_minus_baseline_min": 251.46157836914062,
+      "ranked_features": [
+        "vertical_kurtosis",
+        "vertical_skewness",
+        "elapsed_minutes",
+        "vertical_rms",
+        "horizontal_rms",
+        "horizontal_skewness",
+        "horizontal_peak",
+        "vertical_variance",
+        "horizontal_variance",
+        "vertical_peak",
+        "horizontal_kurtosis",
+        "speed_hz",
+        "load_kN"
+      ],
+      "mae_min": 175.51718958851862
+    },
+    {
+      "bearing": "Bearing3_1",
+      "records": 2538,
+      "training_bearings": [
+        "Bearing1_1",
+        "Bearing1_2",
+        "Bearing1_3",
+        "Bearing1_4",
+        "Bearing2_1",
+        "Bearing2_2",
+        "Bearing2_3",
+        "Bearing2_5",
+        "Bearing3_2",
+        "Bearing3_4",
+        "Bearing3_5"
+      ],
+      "validation_bearings": [
+        "Bearing1_5",
+        "Bearing2_4",
+        "Bearing3_3"
+      ],
+      "prediction_positive_fraction": 1.0,
+      "completeness_mean_abs_error_min": 0.022250698879361153,
+      "mean_abs_prediction_minus_baseline_min": 379.30145263671875,
+      "ranked_features": [
+        "speed_hz",
+        "load_kN",
+        "elapsed_minutes",
+        "horizontal_peak",
+        "vertical_rms",
+        "vertical_peak",
+        "vertical_variance",
+        "horizontal_variance",
+        "horizontal_rms",
+        "horizontal_skewness",
+        "vertical_kurtosis",
+        "vertical_skewness",
+        "horizontal_kurtosis"
+      ],
+      "mae_min": 822.2524846815706
+    },
+    {
+      "bearing": "Bearing3_2",
+      "records": 2496,
+      "training_bearings": [
+        "Bearing1_1",
+        "Bearing1_2",
+        "Bearing1_3",
+        "Bearing1_5",
+        "Bearing2_2",
+        "Bearing2_3",
+        "Bearing2_4",
+        "Bearing2_5",
+        "Bearing3_1",
+        "Bearing3_3",
+        "Bearing3_5"
+      ],
+      "validation_bearings": [
+        "Bearing1_4",
+        "Bearing2_1",
+        "Bearing3_4"
+      ],
+      "prediction_positive_fraction": 1.0,
+      "completeness_mean_abs_error_min": 0.025955067947506905,
+      "mean_abs_prediction_minus_baseline_min": 400.8482971191406,
+      "ranked_features": [
+        "speed_hz",
+        "load_kN",
+        "elapsed_minutes",
+        "vertical_skewness",
+        "horizontal_peak",
+        "vertical_rms",
+        "horizontal_rms",
+        "horizontal_skewness",
+        "vertical_peak",
+        "vertical_kurtosis",
+        "horizontal_variance",
+        "vertical_variance",
+        "horizontal_kurtosis"
+      ],
+      "mae_min": 846.2278519777151
+    },
+    {
+      "bearing": "Bearing3_3",
+      "records": 371,
+      "training_bearings": [
+        "Bearing1_1",
+        "Bearing1_3",
+        "Bearing1_4",
+        "Bearing1_5",
+        "Bearing2_1",
+        "Bearing2_3",
+        "Bearing2_4",
+        "Bearing2_5",
+        "Bearing3_1",
+        "Bearing3_4",
+        "Bearing3_5"
+      ],
+      "validation_bearings": [
+        "Bearing1_2",
+        "Bearing2_2",
+        "Bearing3_2"
+      ],
+      "prediction_positive_fraction": 0.9973045587539673,
+      "completeness_mean_abs_error_min": 0.027413401752710342,
+      "mean_abs_prediction_minus_baseline_min": 923.779296875,
+      "ranked_features": [
+        "load_kN",
+        "speed_hz",
+        "vertical_rms",
+        "vertical_peak",
+        "horizontal_peak",
+        "horizontal_skewness",
+        "horizontal_rms",
+        "elapsed_minutes",
+        "vertical_skewness",
+        "vertical_variance",
+        "horizontal_variance",
+        "vertical_kurtosis",
+        "horizontal_kurtosis"
+      ],
+      "mae_min": 795.2607197722978
+    },
+    {
+      "bearing": "Bearing3_4",
+      "records": 1515,
+      "training_bearings": [
+        "Bearing1_1",
+        "Bearing1_2",
+        "Bearing1_3",
+        "Bearing1_4",
+        "Bearing2_1",
+        "Bearing2_2",
+        "Bearing2_3",
+        "Bearing2_4",
+        "Bearing3_1",
+        "Bearing3_2",
+        "Bearing3_5"
+      ],
+      "validation_bearings": [
+        "Bearing1_5",
+        "Bearing2_5",
+        "Bearing3_3"
+      ],
+      "prediction_positive_fraction": 1.0,
+      "completeness_mean_abs_error_min": 0.004606232047080994,
+      "mean_abs_prediction_minus_baseline_min": 149.56924438476562,
+      "ranked_features": [
+        "speed_hz",
+        "load_kN",
+        "horizontal_peak",
+        "elapsed_minutes",
+        "vertical_peak",
+        "vertical_rms",
+        "vertical_skewness",
+        "horizontal_rms",
+        "vertical_kurtosis",
+        "horizontal_skewness",
+        "horizontal_variance",
+        "horizontal_kurtosis",
+        "vertical_variance"
+      ],
+      "mae_min": 485.8944445619489
+    },
+    {
+      "bearing": "Bearing3_5",
+      "records": 114,
+      "training_bearings": [
+        "Bearing1_1",
+        "Bearing1_3",
+        "Bearing1_4",
+        "Bearing1_5",
+        "Bearing2_1",
+        "Bearing2_2",
+        "Bearing2_3",
+        "Bearing2_5",
+        "Bearing3_1",
+        "Bearing3_3",
+        "Bearing3_4"
+      ],
+      "validation_bearings": [
+        "Bearing1_2",
+        "Bearing2_4",
+        "Bearing3_2"
+      ],
+      "prediction_positive_fraction": 1.0,
+      "completeness_mean_abs_error_min": 0.05775515362620354,
+      "mean_abs_prediction_minus_baseline_min": 105.07123565673828,
+      "ranked_features": [
+        "speed_hz",
+        "load_kN",
+        "vertical_rms",
+        "elapsed_minutes",
+        "horizontal_variance",
+        "horizontal_skewness",
+        "horizontal_rms",
+        "horizontal_peak",
+        "vertical_peak",
+        "vertical_skewness",
+        "vertical_kurtosis",
+        "vertical_variance",
+        "horizontal_kurtosis"
+      ],
+      "mae_min": 196.93565917433355
+    }
+  ],
+  "caveats": [
+    "Only one training seed. The 15 ranking entries come from 15 distinct trained models and held-out bearings, not 15 independent training trials.",
+    "The held-out results are examined for exploratory explanation. Do not select features based on these test results and then report performance on the same bearings as independent evaluation.",
+    "RUL target is minutes to last recorded observation, not precise failure time.",
+    "Speed and load have only three perfectly linked operating combinations; these attributions cannot separate individual causal effects. Highly correlated vibration features and nonphysical interpolated inputs can make IG baselines and rankings misleading; this is model dependence, not causality.",
+    "Absolute attribution is relative to train-mean baseline, not raw-prediction share; the signed and absolute means are different statistics.",
+    "Actual predictions are clipped at zero; the clipping kink increases numerical integration error."
+  ]
+}

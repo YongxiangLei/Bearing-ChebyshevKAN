@@ -1,0 +1,104 @@
+{
+  "checkpoint": "<project>\\cwru\\exp\\outputs\\cwru_augmented\\model.pt",
+  "test_n": 470,
+  "original_accuracy": 1.0,
+  "original_macro_f1": 1.0,
+  "edge_selection": "first-layer edge with largest sum of absolute effective coefficients degrees 1..5; no claim that this is the most causally important input",
+  "hidden_index_zero_based": 20,
+  "input_bin_zero_based": 147,
+  "bin_spacing_hz_if_12khz": 23.4375,
+  "bin_center_hz_if_12khz": 3445.3125,
+  "coefficients_T0_to_T5": [
+    -0.01777614653110504,
+    0.13076356053352356,
+    0.16116800904273987,
+    -0.08522803336381912,
+    0.009336935356259346,
+    0.12171516567468643
+  ],
+  "expanded_in_t": "1.94744265079498*t**5 + 0.0746954828500748*t**4 - 2.77521544694901*t**3 + 0.247640535235405*t**2 + 0.995023488998413*t - 0.169607220217586",
+  "t_definition": "t=tanh((abs(rfft(window))[147]-train_mean[147])/train_std[147])",
+  "max_absolute_edge_reconstruction_error": 2.8312206268310547e-07,
+  "pdf_extractor_edge_error_on_test": {
+    "mean_absolute": 5.595007419586182,
+    "maximum_absolute": 229.55999755859375,
+    "true_edge_mean_absolute": 0.2656400203704834
+  },
+  "test_t_range": [
+    -0.5639057755470276,
+    0.988207221031189
+  ],
+  "thresholded_model_fidelity_on_same_temporal_test": [
+    {
+      "threshold": 0,
+      "total_coefficients": 50112,
+      "retained": 50112,
+      "pruned_fraction": 0.0,
+      "accuracy": 1.0,
+      "macro_f1": 1.0,
+      "prediction_agreement": 1.0,
+      "logit_mae": 0.0
+    },
+    {
+      "threshold": 0.001,
+      "total_coefficients": 50112,
+      "retained": 48642,
+      "pruned_fraction": 0.029334291187739465,
+      "accuracy": 1.0,
+      "macro_f1": 1.0,
+      "prediction_agreement": 1.0,
+      "logit_mae": 0.0013155691558495164
+    },
+    {
+      "threshold": 0.005,
+      "total_coefficients": 50112,
+      "retained": 42662,
+      "pruned_fraction": 0.1486669859514687,
+      "accuracy": 1.0,
+      "macro_f1": 1.0,
+      "prediction_agreement": 1.0,
+      "logit_mae": 0.015164215117692947
+    },
+    {
+      "threshold": 0.01,
+      "total_coefficients": 50112,
+      "retained": 35259,
+      "pruned_fraction": 0.29639607279693486,
+      "accuracy": 1.0,
+      "macro_f1": 1.0,
+      "prediction_agreement": 1.0,
+      "logit_mae": 0.04027153551578522
+    },
+    {
+      "threshold": 0.02,
+      "total_coefficients": 50112,
+      "retained": 22626,
+      "pruned_fraction": 0.5484913793103449,
+      "accuracy": 1.0,
+      "macro_f1": 1.0,
+      "prediction_agreement": 1.0,
+      "logit_mae": 0.2728637456893921
+    },
+    {
+      "threshold": 0.05,
+      "total_coefficients": 50112,
+      "retained": 3925,
+      "pruned_fraction": 0.9216754469987228,
+      "accuracy": 0.9957446808510638,
+      "macro_f1": 0.9946801713055583,
+      "prediction_agreement": 0.9957446808510638,
+      "logit_mae": 0.6837398409843445
+    },
+    {
+      "threshold": 0.1,
+      "total_coefficients": 50112,
+      "retained": 319,
+      "pruned_fraction": 0.9936342592592593,
+      "accuracy": 0.26170212765957446,
+      "macro_f1": 0.2858258051846033,
+      "prediction_agreement": 0.26170212765957446,
+      "logit_mae": 2.0587692260742188
+    }
+  ],
+  "warning": "One edge is not a complete classifier explanation; coefficient thresholding is not proof of physical meaning. Only 0hp time-holdout test; no new bearing generalization."
+}
