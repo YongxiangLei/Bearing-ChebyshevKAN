@@ -14,6 +14,7 @@
 - `interpretability/`：输入归因、边函数和物理频率检查；图表分开标注 B 样条和 Chebyshev 模型。
 - `rul_audit/`、`spline_verify/`：分组、预测重载和样条基函数的检查脚本。
 - `fa_chebykan/`：故障频率锚定原型、CWRU 仿真迁移实验、可追溯元数据及结果，详见 [实验结果报告](fa_chebykan/results/CWRU_实验结果报告.md)。
+- `fa_chebykan/paderborn/`：Paderborn 按轴承划分的三分类、四模型五种子对照，详见 [实验结果报告](fa_chebykan/paderborn/results/Paderborn_多种子实验报告.md)；原始 Paderborn MAT 文件不包含在此目录中。
 - `data/CWRU/`：CWRU 本次使用的 16 个官方来源 MAT 文件及 SHA-256 清单。
 
 仓库保留衍生特征表、实验指标、图像与模型检查点。除所列 CWRU 数据外，其他原始数据需从提供方获取并遵守相应许可。CWRU 页面公开提供下载，但本次未找到明确再分发许可证，请查阅 [来源与核查说明](fa_chebykan/CWRU_元数据核查.md)，并向数据提供方核实使用及再分发条件；检查点是研究输出，运行实验会生成新的结果。
